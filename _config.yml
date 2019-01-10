@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Boyang Fu" <img src="\images\name.png" alt="Boyang Fu">
+  name             : "Boyang Fu" "\images\name.png"
   avatar           : "/images/boyang.jpeg"
   bio              : "Your biography for the left-hand sidebar"
   location         : "Location"
