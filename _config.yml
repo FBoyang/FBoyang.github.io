@@ -80,8 +80,8 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Sidebar Name"
-  avatar           : "/imges/boyang.jpeg"
+  name             : "Boyang Fu" <img src="\images\name.png" alt="Boyang Fu">
+  avatar           : "/images/boyang.jpeg"
   bio              : "Your biography for the left-hand sidebar"
   location         : "Location"
   employer         :
