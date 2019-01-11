@@ -9,4 +9,4 @@ redirect_from:
 
 {% include base_path %}
 
-[Click to view my up-to-date CV]("/files/Resume.pdf")
+ <a href="/files/Resume.pdf">Click to view my up-to-date CV</a>
