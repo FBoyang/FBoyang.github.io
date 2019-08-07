@@ -82,10 +82,10 @@ analytics:
 author:
   name             : "Boyang Fu (付伯阳）" 
   avatar           : "boyang.jpeg"
-  bio              : "Undergraduate student majoring in Computer Science (Honor) and Mathematics, Rutgers University"
-  location         : "New Brunswick, New Jersey"
+  bio              : "Ph.D. Student, Computer Science Department, UCLA"
+  location         : "Los Angeles, California"
   employer         :
-  googlescholar    : 
+  googlescholar    : "https://scholar.google.com/citations?user=Rn6vJ-kAAAAJ&hl=en"
   email            : "fbyang1995@gmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
