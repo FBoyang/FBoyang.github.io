@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Boyang Fu / About"
+title                    : "Boyang Fu"
 title_separator          : "-"
 name                     : &name "Boyang Fu"
 description              : &description "personal description"
