@@ -1,7 +1,7 @@
 ---
 permalink: /
-title: "About Me"
-excerpt: "About me"
+title: "Boyang's Home Page"
+excerpt: "Home Page"
 author_profile: true
 redirect_from: 
   - /about/
