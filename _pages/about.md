@@ -15,6 +15,6 @@ Boyang's Principal Component No-Linear Decomposition:
 
 2. My genetics composition ranging from different countries
 <html>
-<iframe title="Genetics Composition" src="https://you.23andme.com/published/reports/1abd3b10b8134130a349dd11afaa785f/?share_id=744b85cf7e9442e9"></iframe>
+<iframe title="Genetics Composition" src="https://you.23andme.com/reports/preview/ancestry_composition_hd/"></iframe>
 </html>
 
