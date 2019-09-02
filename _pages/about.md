@@ -8,10 +8,8 @@ redirect_from:
   - "/nmp.html"
 ---
 
-This is a page not in the menu. You can use markdown in this page.
-
-Heading 1
+Boyang's Principal Component No-Linear Decomposition:
 ======
+1. I am from in Tianjin (very close to Beijing), China.
+2. My genetics composition ranging from different countries <iframe title="Genetics Composition" src="https://you.23andme.com/published/reports/1abd3b10b8134130a349dd11afaa785f/?share_id=8fe9606c0f4d4947"></iframe>
 
-Heading 2
-======
