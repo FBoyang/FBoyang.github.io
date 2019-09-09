@@ -10,8 +10,6 @@ redirect_from:
 
 Boyang's Principal Component No-Linear Decomposition:
 ======
-1. I am from in Tianjin (very close to Beijing), China.
-
-
-2. My genetics composition ranging from various [areas]("https://you.23andme.com/published/reports/1abd3b10b8134130a349dd11afaa785f/?share_id=a6139fcf02764700")
+1. I live in Tianjin (very close to Beijing), China, but my hometown is Inner Mongolia.
+2. I am fun of anime. I believe anime is the most direct way to convey certain meaning without any noise (for example the limitation of the acting skill, the limitation of physical camera). 
 
