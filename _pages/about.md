@@ -16,7 +16,7 @@ Boyang's Principal Component No-Linear Decomposition:
 
 Course Taken
 ===============
-***This are some of the CS/Math/Stats courses I wish to highlight ***
+<em>This are some of the CS/Math/Stats courses I wish to highlight </em>
 | Course ID     | Title | Year Taken | 
 | ----------- | ----------- | ----------- |
 | 01-198-440   | Intro Artificial Intelligent    | 2018 (Undergrad)  |
