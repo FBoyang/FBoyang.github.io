@@ -25,7 +25,6 @@ Course Taken
 | CS/CM 226  | Machine Learning for Bioinformatics   | 2019  |
 | ECE 236B  | Convex Optimization   | 2020  |
 | Stats 201C  | Advanced Modeling and Inference  | 2020  |
-| Stats 200B  | Theoretical Stats  | 2020  |
 | Stats 200B  | Theoretical Stats  | 2021  |
 | Stats 200C  | High Dimensional Stats  | 2021  |
 
