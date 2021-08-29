@@ -17,16 +17,16 @@ Boyang's Principal Component No-Linear Decomposition:
 Course Taken
 ===============
 <em>This are some of the CS/Math/Stats courses I wish to highlight </em>
-| Course ID     | Title | Year Taken | 
+| Course ID     | Title | Year Taken | Instructor
 | ----------- | ----------- | ----------- |
-| 01-198-440   | Intro Artificial Intelligent    | 2018 (Undergrad)  |
-| 01-640-311    | Intro to Real Analsys      | 2019 (Undergrad)   |
-| 01-640-373   | Numerical Analysis        | 2019 (Undergrad)   |
-| CS/CM 226  | Machine Learning for Bioinformatics   | 2019  |
-| ECE 236B  | Convex Optimization   | 2020  |
-| Stats 201C  | Advanced Modeling and Inference  | 2020  |
-| Stats 200B  | Theoretical Stats  | 2021  |
-| Stats 200C  | High Dimensional Stats  | 2021  |
+| 01-198-440   | Intro Artificial Intelligent    | 2018 (Undergrad)  | Prof. Abdeslam Boularias|
+| 01-640-311    | Intro to Real Analsys      | 2019 (Undergrad)   | Prof. John man shun Ma |
+| 01-640-373   | Numerical Analysis        | 2019 (Undergrad)   | Dr. Shane D. Kepley |
+| CS/CM 226  | Machine Learning for Bioinformatics   | 2019  | Prof. Sriram Sankararaman |
+| ECE 236B  | Convex Optimization   | 2020  | Prof. Lieven Vandenberghe |
+| Stats 201C  | Advanced Modeling and Inference  | 2020  | Prof. Qing Zhou |
+| Stats 200B  | Theoretical Stats  | 2021  | Prof. Arash A. Amini |
+| Stats 200C  | High Dimensional Stats  | 2021  | Prof. Arash A. Amini |
 
 Teaching Assistantship
 ===============
