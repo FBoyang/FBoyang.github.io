@@ -14,8 +14,7 @@ Boyang's Principal Component No-Linear Decomposition:
 2. I am fun of anime. I believe anime is the most direct way to convey certain meaning without any noise (for example the limitation of the acting skill, the limitation of physical camera). 
 
 
-Course Taken
-===============
+## Course Taken
 
 <em>This are some of the CS/Math/Stats courses I wish to highlight </em>
 | Course ID     | Title | Year Taken | Instructor
