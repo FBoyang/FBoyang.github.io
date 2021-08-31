@@ -17,6 +17,7 @@ Boyang's Principal Component No-Linear Decomposition:
 ## Course Taken
 
 <em>This are some of the CS/Math/Stats courses I wish to highlight </em>
+
 | Course ID     | Title | Year Taken | Instructor
 | ----------- | ----------- | ----------- | ----------- |
 | 01-198-440   | Intro Artificial Intelligent    | 2018 (Undergrad)  | Prof. Abdeslam Boularias|
