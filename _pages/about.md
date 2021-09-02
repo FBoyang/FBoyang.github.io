@@ -29,10 +29,18 @@ redirect_from:
 | Stats 200B  | Theoretical Stats  | 2021  | Prof. Arash A. Amini |
 | Stats 200C  | High Dimensional Stats  | 2021  | Prof. Arash A. Amini |
 
-Teaching Assistantship
-===============
+## Teaching Assistantship
 
 | Course ID     | Title       | Year Teaching  | Instructor  |
 | -----------   | ----------- | ----------- | ----------- |
 | CS 181 | Formal Languages and Automata Theory    | 2020  | Prof. Raghu Meka|
 | CS 144 | Web Applications      | 2021   | Prof. John Cho |
+
+## Mentorship Experience
+| Mentored student | Position     | Year  |
+| ---------------- | ------------ | ----- | 
+| Kevin Delao |  California State University Los Angeles    | 2020  |
+| Maya Singh | UCLA      | 2020   |
+| Henry Knelling | Carleton College      | 2021   |
+| Nicholas Liu | Brown University      | 2021   |
+| Trong Pham | California State University, Fullerton      | 2021   |
