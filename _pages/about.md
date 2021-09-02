@@ -32,3 +32,7 @@ redirect_from:
 Teaching Assistantship
 ===============
 
+| Course ID     | Title       | Year Teaching  | Instructor  |
+| -----------   | ----------- | ----------- | ----------- |
+| CS 181 | Formal Languages and Automata Theory    | 2020  | Prof. Raghu Meka|
+| CS 144 | Web Applications      | 2021   | Prof. John Cho |
