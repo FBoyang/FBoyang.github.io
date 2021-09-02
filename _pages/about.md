@@ -40,9 +40,9 @@ redirect_from:
 
 | Mentored student | Position        | Year              |
 | ---------------- | ----------------|  ---------------- | 
-| Kevin Delao | Undergrad, California State University Los Angeles    | 2020  |
-| Maya Singh | Undergrad, UCLA      | 2020   |
-| Henry Knelling | Undergrad, Carleton College      | 2021   |
-| Nicholas Liu | Undergrad, Brown University      | 2021   |
-| Trong Pham | Undergrad, California State University, Fullerton      | 2021   |
+| Kevin Delao | Undergrad student; California State University Los Angeles    | 2020  |
+| Maya Singh | Undergrad student; UCLA      | 2020   |
+| Henry Knelling | Undergrad student; Carleton College      | 2021   |
+| Nicholas Liu | Undergrad student; Brown University      | 2021   |
+| Trong Pham | Undergrad student; California State University, Fullerton      | 2021   |
 
