@@ -39,7 +39,7 @@ redirect_from:
 ## Mentorship Experience
 | Mentored student | Position     | Year  |
 | ---------------- | ------------ | ----- | 
-| Kevin Delao |  California State University Los Angeles    | 2020  |
+| Kevin Delao | California State University Los Angeles    | 2020  |
 | Maya Singh | UCLA      | 2020   |
 | Henry Knelling | Carleton College      | 2021   |
 | Nicholas Liu | Brown University      | 2021   |
