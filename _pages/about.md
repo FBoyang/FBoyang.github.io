@@ -37,8 +37,8 @@ redirect_from:
 | CS 144 | Web Applications      | 2021   | Prof. John Cho |
 
 ## Mentorship Experience
-| Mentored student | Position     | Year  |
-| ---------------- | ------------ | ----- | 
+| Mentored student | Position        | Year              |
+| ---------------- | ----------------|  ---------------- | 
 | Kevin Delao | California State University Los Angeles    | 2020  |
 | Maya Singh | UCLA      | 2020   |
 | Henry Knelling | Carleton College      | 2021   |
