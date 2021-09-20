@@ -40,7 +40,7 @@ redirect_from:
 
 | Mentored student | Position        | Year              |
 | ---------------- | ----------------|  ---------------- | 
-| Kevin Delao | Undergrad student; California State University Los Angeles    | 2020  |
+| Kevin Delao | Master student; California State University Los Angeles    | 2020  |
 | Maya Singh | Undergrad student; UCLA      | 2020   |
 | Henry Knelling | Undergrad student; Carleton College      | 2021   |
 | Nicholas Liu | Undergrad student; Brown University      | 2021   |
