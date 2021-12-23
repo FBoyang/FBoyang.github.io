@@ -37,6 +37,7 @@ redirect_from:
 | -----------   | ----------- | ----------- | ----------- |
 | CS 181 | Formal Languages and Automata Theory    | 2020  | Prof. Raghu Meka|
 | CS 144 | Web Applications      | 2021   | Prof. John Cho |
+| CS 146 | Intro to Machine Learning | 2022 | Prof. Sriram Sankararaman | 
 
 ## Mentorship Experience
 
