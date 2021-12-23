@@ -28,6 +28,8 @@ redirect_from:
 | Stats 201C  | Advanced Modeling and Inference  | 2020  | Prof. Qing Zhou |
 | Stats 200B  | Theoretical Stats  | 2021  | Prof. Arash A. Amini |
 | Stats 200C  | High Dimensional Stats  | 2021  | Prof. Arash A. Amini |
+| CS 260 | Machine Learning Algorithms | 2021 | Prof. Quanquan Gu |
+| CS 269 | Large Scale Machine Learning | 2021 | Prof. Baharan Mirzasoleiman |
 
 ## Teaching Assistantship
 
