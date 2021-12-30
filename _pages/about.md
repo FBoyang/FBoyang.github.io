@@ -16,7 +16,7 @@ redirect_from:
 
 ## Course Taken
 
-<em>This are some of the CS/Math/Stats courses I wish to highlight </em>
+<em>These are some of the CS/Math/Stats courses I wish to highlight </em>
 
 | Course ID     | Title       | Year Taken  | Instructor  |
 | -----------   | ----------- | ----------- | ----------- |
