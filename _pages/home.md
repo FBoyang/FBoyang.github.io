@@ -10,5 +10,7 @@ I am a third year Ph.D. student in Computer Science Department at [UCLA](http://
 
 ### Field of interests:
 
-* Computational genetics  ｜  * Model interpretability
-* Large-scale machine learning  ｜  * Causal inference
+* Computational genetics  
+* Model interpretability
+* Large-scale machine learning 
+* Causal inference
