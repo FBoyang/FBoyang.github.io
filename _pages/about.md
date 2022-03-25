@@ -17,14 +17,17 @@ A: I consider myself a computer scientist. We write code, process data, apply ML
 
 2.
 Q: As a computer science major, why do you study biology?
+
 A: Many computer science researchers develop methods for specific applications. Just like researchers who focus their attention on computer vision, NLP, and cyber-physical systems, we focus our attention on answering biological questions
 
 3.
 Q: Why choose computational biology as my research field?
+
 A: I found this is one of the most charming areas. The genetic signal we discovered can help better understand human beings and bring new opportunities for clinical care. 
 
 4.
 Q: What methods do I use to solve the questions 
+
 A: Genetic datasets are usually high dimensional with a limited sample size. Handling this kind of data requires more careful assumptions about the model and solid domain knowledge. Therefore, statistics, linear algebra, and data mining skills are essential for solving the problem. 
 
 5.
