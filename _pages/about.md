@@ -21,7 +21,7 @@ I summarized some of the frequently asking questions from my friends who are not
 
 * Q: ***Why choose computational biology as my research field?***
 
-&nbsp;&nbsp;&nbsp;A: <em> I found this is one of the most charming areas. The genetic signal we discovered can help better understand human beings and bring new opportunities for clinical care. <em>
+&nbsp;&nbsp;&nbsp;A: <em> I found this is one of the most charming areas. The genetic signal we discovered can help better understand human beings and bring new opportunities for clinical care. We have seen many great works that help us better understand the origin of human beings, the risk of having certain diseases, precision medicine, etc. Yet our knowledge of our own body is still limited, with vast opportunities in this field.  <em>
 
 * Q: ***What methods do I use to solve the questions***
 
