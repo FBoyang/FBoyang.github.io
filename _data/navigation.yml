@@ -12,15 +12,15 @@ main:
 #   - title: "Portfolio"
 #     url: /portfolio/
         
+  
+  - title: "CV"
+    url: /cv/
+  - title: "Teaching&Courses"
+    url: /courses/
   - title: "Blog Posts"
     url: /year-archive/
   - title: "About"
     url: /about/
-    
-  - title: "CV"
-    url: /cv/
-    
-  - title: "Teaching&Courses"
-    url: /courses/
+
 #   - title: "Guide"
 #     url: /markdown/
