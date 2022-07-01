@@ -32,6 +32,7 @@ redirect_from:
 | Stats 200C  | High Dimensional Stats  | 2021  | Prof. Arash A. Amini |
 | CS 260 | Machine Learning Algorithms | 2021 | Prof. Quanquan Gu |
 | CS 269 | Large Scale Machine Learning | 2021 | Prof. Baharan Mirzasoleiman |
+| CS 267A | Probabilistic Programming and Relational Learning | 2022 | Prof. Guy Van den Broeck |
 
 ## Teaching Assistantship
 
@@ -47,7 +48,7 @@ redirect_from:
 | ---------------- | ----------------|  ---------------- | 
 | Kevin Delao | Master student; California State University Los Angeles    | 2020  |
 | Maya Singh | Undergrad student; UCLA      | 2020   |
-| Henry Knelling | Undergrad student; Carleton College      | 2021   |
+| Henry Koelling | Undergrad student; Carleton College      | 2021   |
 | Nicholas Liu | Undergrad student; Brown University      | 2021   |
 | Trong Pham | Undergrad student; California State University, Fullerton      | 2021   |
 
