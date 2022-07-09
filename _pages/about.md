@@ -17,7 +17,7 @@ I summarized some of the frequently asking questions from my friends who are not
 
 * Q: ***As a computer science major, why do you study biology?***
 
-&nbsp;&nbsp;&nbsp; A: <em> Many computer science researchers develop methods for specific applications. Just like researchers who focus their attention on computer vision, NLP, and cyber-physical systems, we focus our attention on answering biological questions. We need additional effort to understanding the data, understanding the relevant biological knowledge to analyze the data.  <em>
+&nbsp;&nbsp;&nbsp; A: <em> Many computer science researchers develop methods for specific applications. Just like researchers who focus their attention on computer vision, NLP, and cyber-physical systems, we focus our attention on answering biological questions. We need additional effort to understand the data and the relevant biological knowledge to analyze the data.  <em>
 
 * Q: ***Why choose computational biology as my research field?***
 
