@@ -13,11 +13,11 @@ I summarized some of the frequently asking questions from my friends who are not
 ### Q&A
 * Q:  ***Am I a biologist or a computer scientist?***
 
-&nbsp;&nbsp;&nbsp;  <em> A: I consider myself a computer scientist. We write code, process data, apply ML algorithms, design pipelines, run large-scale jobs like other people in the CS  area do. Not like biologists, I do not touch pipette or western blot or study live creatures! However, we do need to have a decent knowledge of populational genetics, molecular biology, etc. <em>
+&nbsp;&nbsp;&nbsp;  <em> A: I consider myself a computer scientist. My daily research routine involves processing data; engaging in method development, designing integrated pipelines for large-scale data analysis; and arguing theoretically and empirically about our results, like other people in the CS  area do. Unlike biologists, I do not touch pipettes, western blot, or experiment model organisms. Maybe one aspect that distinguishes us is the type of data we deal with. We do need to have a decent knowledge of populational genetics, molecular biology, etc., and vital skill for data preprocessing since data in our fields is arguably much more noisy, limited, and less intuitive than other types of data (Image, Natural language) <em>
 
 * Q: ***As a computer science major, why do you study biology?***
 
-&nbsp;&nbsp;&nbsp; A: <em> Many computer science researchers develop methods for specific applications. Just like researchers who focus their attention on computer vision, NLP, and cyber-physical systems, we focus our attention on answering biological questions <em>
+&nbsp;&nbsp;&nbsp; A: <em> Many computer science researchers develop methods for specific applications. Just like researchers who focus their attention on computer vision, NLP, and cyber-physical systems, we focus our attention on answering biological questions. We need additional effort to understanding the data, understanding the relevant biological knowledge to analyze the data.  <em>
 
 * Q: ***Why choose computational biology as my research field?***
 
