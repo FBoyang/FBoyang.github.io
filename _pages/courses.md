@@ -46,9 +46,13 @@ redirect_from:
 
 | Mentored student | Position        | Year              |
 | ---------------- | ----------------|  ---------------- | 
-| Kevin Delao | Master student; California State University Los Angeles    | 2020  |
-| Maya Singh | Undergrad student; UCLA      | 2020   |
+| Prateek Anand | Undergrad student; UCLA      | 2022 - now   |
+| Aakarsh Anand | Undergrad student; UCLA      | 2022 - now   |
+| Zhengtong Liu | Undergrad student; UCLA      | 2021 - now   |
 | Henry Koelling | Undergrad student; Carleton College      | 2021   |
 | Nicholas Liu | Undergrad student; Brown University      | 2021   |
 | Trong Pham | Undergrad student; California State University, Fullerton      | 2021   |
+| Kevin Delao | Master student; California State University Los Angeles    | 2020  |
+| Maya Singh | Undergrad student; UCLA      | 2020   |
+
 
