@@ -15,13 +15,13 @@ Research in Computational Molecular Biology (**RECOMB**), 2023
 
 ## 2022
 - Fast Kernel-based Association Testing of non-linear genetic effects for Biobank-scale data  
-**Boyang Fu**, Ali Pazokitoroudi, Mukund Sudarshan, Lakshminarayanan Subramanian, Sriram Sankararaman 
+**Boyang Fu**, Ali Pazokitoroudi, Mukund Sudarshan, Lakshminarayanan Subramanian, Sriram Sankararaman   
 bioRxiv, 2022 \[[Paper](
 (https://www.biorxiv.org/content/10.1101/2022.04.13.488214v1.full.pdf))\] 
 
 ## 2021
 - Marginal Contribution Feature Importance-an Axiomatic Approach for Explaining Data  
-Amnon Catav, **Boyang Fu**, Yazeed Zoabi, Ahuva Libi Weiss Meilik, Noam Shomron, Jason Ernst, Sriram Sankararaman, Ran Gilad-Bachrach 
+Amnon Catav, **Boyang Fu**, Yazeed Zoabi, Ahuva Libi Weiss Meilik, Noam Shomron, Jason Ernst, Sriram Sankararaman, Ran Gilad-Bachrach   
 International Conference on Machine Learning (**ICML**), 2021 \[[Paper](
 http://proceedings.mlr.press/v139/catav21a/catav21a.pdf)\]
 
