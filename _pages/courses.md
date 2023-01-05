@@ -22,9 +22,9 @@ redirect_from:
 
 | Course ID     | Title       | Year Taken  | Instructor  |
 | -----------   | ----------- | ----------- | ----------- |
-| 01-198-440   | Intro Artificial Intelligent    | 2018 (Undergrad)  | Prof. Abdeslam Boularias|
-| 01-640-311    | Intro to Real Analsys      | 2019 (Undergrad)   | Prof. John man shun Ma |
-| 01-640-373   | Numerical Analysis        | 2019 (Undergrad)   | Dr. Shane D. Kepley |
+| 01-(CS)-440   | Intro Artificial Intelligent    | 2018 (Undergrad)  | Prof. Abdeslam Boularias|
+| 01-(Math)-311    | Intro to Real Analsys      | 2019 (Undergrad)   | Prof. John man shun Ma |
+| 01-(Math)-373   | Numerical Analysis        | 2019 (Undergrad)   | Dr. Shane D. Kepley |
 | CS/CM 226  | Machine Learning for Bioinformatics   | 2019  | Prof. Sriram Sankararaman |
 | ECE 236B  | Convex Optimization   | 2020  | Prof. Lieven Vandenberghe |
 | Stats 201C  | Advanced Modeling and Inference  | 2020  | Prof. Qing Zhou |
