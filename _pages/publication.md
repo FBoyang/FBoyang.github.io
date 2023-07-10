@@ -10,13 +10,14 @@ author_profile: true
 
 ## 2023
 - **Leveraging family data to design Mendelian Randomization that is provably robust to population stratification**   
-Nathan LaPierre*, **Boyang Fu\***, Steven Turnbull, Eleazar Eskin, Sriram Sankararaman  
-Research in Computational Molecular Biology (**RECOMB**), 2023
+Nathan LaPierre*, **Boyang Fu\***, Steven Turnbull, Eleazar Eskin, Sriram Sankararaman
+Genome Research (2023) \\[[Paper](
+(https://genome.cshlp.org/content/early/2023/05/17/gr.277664.123.abstract))\]  
+Preliminary version presented at RECOMB (2023)
 
-## 2022
 - **Fast Kernel-based Association Testing of non-linear genetic effects for Biobank-scale data**  
 **Boyang Fu**, Ali Pazokitoroudi, Mukund Sudarshan, Lakshminarayanan Subramanian, Sriram Sankararaman   
-bioRxiv, 2022 \[[Paper](
+Nature Communication, (To appear, 2023) \[[Paper](
 (https://www.biorxiv.org/content/10.1101/2022.04.13.488214v1.full.pdf))\] 
 
 ## 2021
