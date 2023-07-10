@@ -10,8 +10,8 @@ author_profile: true
 
 ## 2023
 - **Leveraging family data to design Mendelian Randomization that is provably robust to population stratification**   
-Nathan LaPierre*, **Boyang Fu\***, Steven Turnbull, Eleazar Eskin, Sriram Sankararaman
-Genome Research (2023) \\[[Paper](
+Nathan LaPierre*, **Boyang Fu\***, Steven Turnbull, Eleazar Eskin, Sriram Sankararaman  
+Genome Research (2023) \[[Paper](
 (https://genome.cshlp.org/content/early/2023/05/17/gr.277664.123.abstract))\]  
 Preliminary version presented at RECOMB (2023)
 
