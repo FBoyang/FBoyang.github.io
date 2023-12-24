@@ -1,0 +1,20 @@
+.publication-entry {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .publication-text {
+    flex: 1;
+  }
+  
+  .publication-figure {
+    margin-left: 20px;
+  }
+  
+  .publication-figure img {
+    max-width: 100px; /* Adjust as needed */
+    height: auto;
+  }
+
+  
