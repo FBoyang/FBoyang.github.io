@@ -44,7 +44,7 @@ https://dl.acm.org/doi/pdf/10.1145/3380990)\]
     Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (**UbiComp**), 2019 \[[Paper](https://dl.acm.org/doi/pdf/10.1145/3328913)\]
   </div>
   <div class="publication-figure">
-    <img src="/_publications/images/mac.png" alt="MAC">
+    <img src="/assets/images/publications/mac.png" alt="MAC">
   </div>
 </div>
 <!-- - **MAC: Measuring the impacts of anomalies on travel time of multiple transportation systems**   
