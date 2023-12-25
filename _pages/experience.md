@@ -37,9 +37,9 @@ author_profile: true
   </div>
   <div class="education-details">
     <h3>Rutgers University - New Brunswick</h3>
-    <p>B.S. in Computer Science<br>
-    <p>B.S. in Mathematics (2nd Degree)<br>
-    01/2016 - 05/2019</p>
+    <p>B.S. in Computer Science</p>
+    <p>B.S. in Mathematics (2nd Degree)</p>
+    <p>01/2016 - 05/2019</p>
   </div>
 </div>
 
