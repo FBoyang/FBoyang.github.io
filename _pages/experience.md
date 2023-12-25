@@ -37,9 +37,9 @@ author_profile: true
   </div>
   <div class="education-details">
     <h3>Rutgers University - New Brunswick</h3>
-    <p>B.S. in Computer Science</p>
-    <p>B.S. in Mathematics (2nd Degree)</p>
-    <p>01/2016 - 05/2019</p>
+    <p>B.S. in Computer Science<br>
+    B.S. in Mathematics (2nd Degree)<br>
+    01/2016 - 05/2019</p>
   </div>
 </div>
 
@@ -52,7 +52,7 @@ author_profile: true
   </div>
   <div class="education-details">
     <h3>AI resident at <strong>X Development LLC</strong> (formerly <strong>Google X</strong>), Mountain View </h3>
-    01/2023 -05/2023</p>
+    <p>01/2023 -05/2023</p>
   </div>
 </div>
 
@@ -63,7 +63,7 @@ author_profile: true
   </div>
   <div class="education-details">
     <h3>Research Intern at <strong>Bruins-In-Genomics</strong>, UCLA </h3>
-    06/2018 -08/2018</p>
+    <p>06/2018 -08/2018</p>
   </div>
 </div>
 
