@@ -9,7 +9,7 @@ author_profile: true
 \* indicates equal contribution.
 
 
-## Preprint
+## Preprints
 <div class="publication-entry">
   <div class="publication-figure"> 
      <img src="/assets/images/publications/FAME.png" alt="FAME">
