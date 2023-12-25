@@ -36,7 +36,7 @@ Preliminary version presented at RECOMB (2023) -->
     <p>
       <strong>Fast Kernel-based Association Testing of non-linear genetic effects for Biobank-scale data</strong><br>
       <strong>Boyang Fu</strong>,Ali Pazokitoroudi, Mukund Sudarshan, Lakshminarayanan Subramanian, Sriram Sankararaman <br>
-      Nature Communication, 2023<br>
+      Nature Communications, 2023<br>
       <a href="https://doi.org/10.1038/s41467-023-40346-2">Paper</a>
     </p>
   </div>
