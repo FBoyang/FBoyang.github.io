@@ -13,10 +13,10 @@ main:
 #     url: /portfolio/
         
   
-  - title: "CV"
-    url: /cv/
   - title: "Publications"
     url: /publication/
+  - title: "Experience"
+    url: /experience/
   - title: "Teaching&Courses"
     url: /courses/
   - title: "Blog Posts"
