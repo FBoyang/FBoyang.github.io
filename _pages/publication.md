@@ -17,8 +17,9 @@ author_profile: true
   <div class="publication-text">
     <p>
       <strong>A biobank-scale test of marginal epistasis reveals genome-wide signals of polygenic epistasis</strong><br>
-      <strong>Boyang Fu*</strong>, Ali Pazokitoroudi*, Albert Xue, Aakarsh Anand, Prateek Anand, Noah Zaitlen, Sriram Sankararaman<br>
-      bioRxiv<br>
+      <strong>Boyang Fu*</strong>, Ali Pazokitoroudi*, Albert Xue, Aakarsh Anand, Prateek Anand, Noah Zaitlen, Sriram Sankararaman<br> 
+      bioRxiv<br>       
+      <a href="https://www.biorxiv.org/content/10.1101/2023.09.10.557084v1.abstract">Paper</a>
     </p>
   </div>
 </div>
