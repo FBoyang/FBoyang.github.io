@@ -8,9 +8,9 @@ author_profile: true
 ## Education
 
 <div class="education-entry">
-  <div class="school-logo">
+  <!-- <div class="school-logo">
     <img src="/assets/images/experience/UCLA.png" alt="UCLA">
-  </div>
+  </div> -->
   <div class="education-details">
     <h3>University of California, Los Angeles</h3>
     <p>Ph.D. in Computer Science<br>
@@ -20,9 +20,9 @@ author_profile: true
 
 
 <div class="education-entry">
-  <div class="school-logo">
+  <!-- <div class="school-logo">
     <img src="/assets/images/experience/UCLA.png" alt="UCLA">
-  </div>
+  </div> -->
   <div class="education-details">
     <h3>University of California, Los Angeles</h3>
     <p>M.S. in Computer Science<br>
@@ -32,9 +32,9 @@ author_profile: true
 
 
 <div class="education-entry">
-  <div class="school-logo">
+  <!-- <div class="school-logo">
     <img src="/assets/images/experience/rutgers.png" alt="School Logo">
-  </div>
+  </div> -->
   <div class="education-details">
     <h3>Rutgers University - New Brunswick</h3>
     <p>B.S. in Computer Science<br>
