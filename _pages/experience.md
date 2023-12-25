@@ -52,7 +52,7 @@ author_profile: true
   </div>
   <div class="education-details">
     <p>
-      <strong>X Development LLC</strong>, (formerly <strong>Google X</strong>), Mountain View<br>
+      <strong>X Development LLC</strong>, (formerly <strong>Google X</strong>), Mountain View, CA<br>
       <strong>AI resident</strong><br>
       01/2023 - 05/2023
     </p>
@@ -66,7 +66,7 @@ author_profile: true
   </div>
   <div class="education-details">
     <p>
-      <strong>Bruins-In-Genomics (B.I.G.)</strong>, UCLA<br>
+      <strong>Bruins-In-Genomics (B.I.G.)</strong>, Los Angeles, CA<br>
       <strong>Research intern</strong><br>
       06/2018 - 08/2018
     </p>
