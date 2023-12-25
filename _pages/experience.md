@@ -63,7 +63,7 @@ author_profile: true
     <img src="/assets/images/experience/BIG.png" alt="BIG Logo">
   </div>
   <div class="education-details">
-    <h3>Bruins-In-Genomics, <span>UCLA</span></h3>
+    <h3>Bruins-In-Genomics (B.I.G.), <span>UCLA</span></h3>
     <p><strong>Research intern</strong><br>
     06/2018 - 08/2018</p>
   </div>
