@@ -51,9 +51,11 @@ author_profile: true
     <img src="/assets/images/experience/X.png" alt="X Logo">
   </div>
   <div class="education-details">
-    <h3>X Development LLC</h3><span> (formerly <strong>Google X</strong>), Mountain View</span>
-    <p><strong>AI resident</strong><br>
-    01/2023 - 05/2023</p>
+    <p>
+      <strong>X Development LLC</strong>, (formerly <strong>Google X</strong>), Mountain View<br>
+      <strong>AI resident</strong><br>
+      01/2023 - 05/2023
+    </p>
   </div>
 </div>
 
@@ -63,9 +65,11 @@ author_profile: true
     <img src="/assets/images/experience/BIG.png" alt="BIG Logo">
   </div>
   <div class="education-details">
-    <h3>Bruins-In-Genomics (B.I.G.), <span>UCLA</span></h3>
-    <p><strong>Research intern</strong><br>
-    06/2018 - 08/2018</p>
+    <p>
+      <strong>Bruins-In-Genomics (B.I.G.)</strong>, UCLA<br>
+      <strong>Research intern</strong><br>
+      06/2018 - 08/2018
+    </p>
   </div>
 </div>
 
