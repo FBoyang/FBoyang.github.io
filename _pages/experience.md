@@ -52,7 +52,7 @@ author_profile: true
   </div>
   <div class="education-details">
     <h3>X Development LLC, Mountain View <span>(formerly <strong>Google X</strong>), Mountain View</span></h3>
-    <p>AI resident</strong><br>
+    <p><strong>AI resident</strong><br>
     01/2023 - 05/2023</p>
   </div>
 </div>
@@ -64,7 +64,8 @@ author_profile: true
   </div>
   <div class="education-details">
     <h3>Bruins-In-Genomics, <span>UCLA</span></h3>
-    <p>06/2018 - 08/2018</p>
+    <p><strong>Research intern</strong><br>
+    06/2018 - 08/2018</p>
   </div>
 </div>
 
