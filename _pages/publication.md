@@ -8,6 +8,35 @@ author_profile: true
 
 \* indicates equal contribution.
 
+
+## Preprint
+<div class="publication-entry">
+  <div class="publication-figure"> 
+     <img src="/assets/images/publications/FAME.png" alt="FAME">
+  </div>
+  <div class="publication-text">
+    <p>
+      <strong>A biobank-scale test of marginal epistasis reveals genome-wide signals of polygenic epistasis</strong><br>
+      <strong>Boyang Fu*</strong>, Ali Pazokitoroudi*, Albert Xue, Aakarsh Anand, Prateek Anand, Noah Zaitlen, Sriram Sankararaman<br>
+      bioRxiv<br>
+    </p>
+  </div>
+</div>
+
+## 2024
+<div class="publication-entry">
+  <!-- <div class="publication-figure"> -->
+    <!-- <img src="/assets/images/publications/MR.png" alt="MR"> -->
+  <!-- </div> -->
+  <div class="publication-text">
+    <p>
+      <strong>A Scalable Adaptive Quadratic Kernel Method for Interpretable Epistasis Analysis in Complex Traits</strong><br>
+      <strong>Boyang Fu*</strong>, Prateek Anand, Aakarsh Anand, Joel Mefford, Sriram Sankararaman<br>
+      Research in Computational Molecular Biology (<strong>RECOMB</strong>), 2024<br>
+    </p>
+  </div>
+</div>
+
 ## 2023
 <div class="publication-entry">
   <div class="publication-figure">
