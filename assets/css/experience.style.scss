@@ -1,0 +1,16 @@
+.education-entry {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd; /* Box border */
+    padding: 15px;
+    margin-bottom: 20px; /* Space between entries */
+  }
+  
+  .school-logo img {
+    width: 100px; /* Adjust size as needed */
+    margin-right: 20px; /* Space between logo and text */
+  }
+  
+  .education-details h3 {
+    margin-top: 0;
+  }
