@@ -48,22 +48,23 @@ author_profile: true
 
 <div class="education-entry">
   <div class="school-logo">
-    <img src="/assets/images/experience/X.png" alt="X Lgo">
+    <img src="/assets/images/experience/X.png" alt="X Logo">
   </div>
   <div class="education-details">
-    <h3>AI resident at <strong>X Development LLC</strong> (formerly <strong>Google X</strong>), Mountain View </h3>
-    <p>01/2023 -05/2023</p>
+    <h3>X Development LLC, Mountain View <span>(formerly <strong>Google X</strong>), Mountain View</span></h3>
+    <p>AI resident</strong><br>
+    01/2023 - 05/2023</p>
   </div>
 </div>
 
 
 <div class="education-entry">
   <div class="school-logo">
-    <img src="/assets/images/experience/BIG.png" alt="BIG Lgo">
+    <img src="/assets/images/experience/BIG.png" alt="BIG Logo">
   </div>
   <div class="education-details">
-    <h3>Research Intern at <strong>Bruins-In-Genomics</strong>, UCLA </h3>
-    <p>06/2018 -08/2018</p>
+    <h3>Bruins-In-Genomics, <span>UCLA</span></h3>
+    <p>06/2018 - 08/2018</p>
   </div>
 </div>
 
