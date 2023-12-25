@@ -3,7 +3,7 @@ layout: archive
 title: "Publications"
 permalink: /publication/
 author_profile: true
-
+nav_order: 1
 ---
 
 \* indicates equal contribution.
