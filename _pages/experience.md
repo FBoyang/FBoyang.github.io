@@ -51,7 +51,7 @@ author_profile: true
     <img src="/assets/images/experience/X.png" alt="X Logo">
   </div>
   <div class="education-details">
-    <h3>X Development LLC, Mountain View <span>(formerly <strong>Google X</strong>), Mountain View</span></h3>
+    <h3>X Development LLC</h3><span> (formerly <strong>Google X</strong>), Mountain View</span>
     <p><strong>AI resident</strong><br>
     01/2023 - 05/2023</p>
   </div>
