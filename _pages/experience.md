@@ -7,34 +7,19 @@ author_profile: true
 
 ## Education
 
-<div class="education-entry">
-  <!-- <div class="school-logo">
-    <img src="/assets/images/experience/UCLA.png" alt="UCLA">
-  </div> -->
+<div class="education-container">
   <div class="education-details">
     <h3>University of California, Los Angeles</h3>
     <p>Ph.D. in Computer Science<br>
-    09/2019 - Now</p>
+    09/2019 - Present</p>
   </div>
-</div>
 
-
-<div class="education-entry">
-  <!-- <div class="school-logo">
-    <img src="/assets/images/experience/UCLA.png" alt="UCLA">
-  </div> -->
   <div class="education-details">
     <h3>University of California, Los Angeles</h3>
     <p>M.S. in Computer Science<br>
     09/2019 - 04/2022</p>
   </div>
-</div>
 
-
-<div class="education-entry">
-  <!-- <div class="school-logo">
-    <img src="/assets/images/experience/rutgers.png" alt="School Logo">
-  </div> -->
   <div class="education-details">
     <h3>Rutgers University - New Brunswick</h3>
     <p>B.S. in Computer Science<br>
