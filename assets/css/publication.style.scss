@@ -1,6 +1,6 @@
 .publication-entry {
     display: flex;
-    align-items: flex-start;
+    align-items: center; /* Align items vertically at center */
     margin-bottom: 20px;
 }
 
@@ -8,11 +8,15 @@
     flex: 1;
     /* Add some left margin for spacing if needed */
     margin-left: 20px;
+    text-align: center;
+    margin-right: 40px;
+    font-size: 0.9em;
 }
   
+
 .publication-figure img {
     /* Adjust width as needed */
-    width: 150px; /* Example size, adjust as needed */
+    width: 300px; /* Fig size */
     height: auto;
 }
 
