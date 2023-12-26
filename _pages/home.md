@@ -14,3 +14,11 @@ I am a fourth year Ph.D. student in Computer Science Department at [UCLA](http:/
 * Model interpretability
 * Large-scale machine learning 
 * Causal inference
+
+
+### Selected Awards:
+
+* [Outstanding Research Departmental Nomination](https://www.cs.ucla.edu/the-sriram-lab-achieves-breakthrough-discovery-in-understanding-complex-genetic-and-disease-relationships/) [2023]
+* Outstanding Mentorship Award [2021-2022]
+* Graduate Division Fellowship Award [2020]
+* Academic Excellence Scholarship [2016-2018]
