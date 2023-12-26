@@ -46,8 +46,8 @@ redirect_from:
 
 | Mentored student | Position        | Year              |
 | ---------------- | ----------------|  ---------------- | 
-| [Prateek Anand](https://www.linkedin.com/in/prateek-anand-21431a1b4/) | Undergrad; UCLA      | 2022 - now   |
-| [Aakarsh Anand](https://www.linkedin.com/in/aakarsh-anand-8943211b4/) | Undergrad; UCLA      | 2022 - now   |
+| [Prateek Anand](https://www.linkedin.com/in/prateek-anand-21431a1b4/) | Undergrad student; UCLA      | 2022 - now   |
+| [Aakarsh Anand](https://www.linkedin.com/in/aakarsh-anand-8943211b4/) | Undergrad student; UCLA      | 2022 - now   |
 | [Zhengtong Liu](https://zhengtong-liu.github.io/) | Undergrad student (Now Ph.D. student); UCLA      | 2021 - 2023   |
 | Henry Koelling | Undergrad student; Carleton College      | 2021   |
 | Nicholas Liu | Undergrad student; Brown University      | 2021   |
