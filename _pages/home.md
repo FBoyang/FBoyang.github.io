@@ -17,7 +17,7 @@ I am a fifth year Ph.D. student in Computer Science Department at [UCLA](http://
 
 
 ### Selected Awards:
-
+* UCLA Dissertation Year Fellowship: A $20,000 stipend plus standard tuition and fees [2024]
 * [Outstanding Research Departmental Nomination](https://www.cs.ucla.edu/the-sriram-lab-achieves-breakthrough-discovery-in-understanding-complex-genetic-and-disease-relationships/) [2023]
 * Outstanding Mentorship Award [2021-2022]
 * Graduate Division Fellowship Award [2020]
