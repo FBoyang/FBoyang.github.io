@@ -33,6 +33,7 @@ redirect_from:
 | CS 260 | Machine Learning Algorithms | 2021 | Prof. Quanquan Gu |
 | CS 269 | Large Scale Machine Learning | 2021 | Prof. Baharan Mirzasoleiman |
 | CS 267A | Probabilistic Programming and Relational Learning | 2022 | Prof. Guy Van den Broeck |
+| CS 261 | Deep Generative Models | 2024 | Prof. Aditya Grover |
 
 ## Teaching Assistantship
 
