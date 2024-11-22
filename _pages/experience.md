@@ -61,14 +61,8 @@ author_profile: true
 ## Academic Service
 
 ### Journal Reviewer
-- *PLoS Computational Biology*  
-- *Nature Communications*  
-- *IEEE Transactions on Computational Biology and Bioinformatics*  
+Nature Communications/ AJHG/ PLoS Computational Biology/ IEEE Transactions on Computational Biology and Bioinformatics
 
-### Conference Reviewer
-- **ICML**: 2024  
-- **ICLR**: 2024  
-- **NeurIPS**: 2024, 2023, 2022, 2021  
-- **MLCB**: 2024, 2023, 2022  
-- **ISMB**: 2023  
-- **RECOMB**: 2024, 2023, 2022  
+### Conference Reviewer 
+ICML 2024 / ICLR 2024 / NeurIPS 2024, 2023, 2022, 2021 / MLCB 2024, 2023, 2022 / ISMB 2023 / RECOMB 2024, 2023, 2022
+
