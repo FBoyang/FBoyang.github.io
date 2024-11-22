@@ -76,8 +76,3 @@ The Markov chain model is defined by the transition probabilities $$Pr(X_{j+1}=x
 
 
 The average rate of crossover per unit physical distance is denoted as $c_j$, and the effective population size is denoted as $N$. The recombination rate at position $j$, $ρ_j$, is calculated as $4Nc_j$.
-
-
-
-- Murphy, Kevin P. Machine learning: a probabilistic perspective. MIT press, 2012.
-- Siva, Nayanah. "1000 Genomes project." Nature biotechnology 26.3 (2008): 256-257.
