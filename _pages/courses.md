@@ -23,7 +23,7 @@ redirect_from:
 | Course ID     | Title       | Year Taken  | Instructor  |
 | -----------   | ----------- | ----------- | ----------- |
 | 01-(Math)-428   | Graph Theory    | 2017 (Undergrad)  | Dr. Surya Teja Gavva |
-| 01-(CS)-440   | Intro Artificial Intelligent    | 2018 (Undergrad)  | Prof. Abdeslam Boularias |
+| 01-(CS)-440   | Intro Artificial Intelligent    | 2018 (Undergrad)  | Prof. Abdeslam Boularias|
 | 01-(Math)-311    | Intro to Real Analysis      | 2019 (Undergrad)   | Prof. John man shun Ma |
 | 01-(Math)-373   | Numerical Analysis        | 2019 (Undergrad)   | Dr. Shane D. Kepley |
 | CS/CM 226  | Machine Learning for Bioinformatics   | 2019  | Prof. Sriram Sankararaman |
@@ -43,6 +43,7 @@ redirect_from:
 | CS 181 | Formal Languages and Automata Theory    | 2020  | Prof. Raghu Meka|
 | CS 144 | Web Applications      | 2021   | Prof. John Cho |
 | CS 146 | Intro to Machine Learning | 2022/ 2024 | Prof. Sriram Sankararaman |
+↩︎ [Latest Teaching Evaluation](../files/FU_B._-_24W_COM_SCI_M146_DIS_1H.pdf)
 
 ## Mentorship Experience
 
