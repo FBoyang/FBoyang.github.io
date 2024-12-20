@@ -23,14 +23,14 @@ redirect_from:
 | Course ID     | Title       | Year Taken  | Instructor  |
 | -----------   | ----------- | ----------- | ----------- |
 | 01-(Math)-428   | Graph Theory    | 2017 (Undergrad)  | Dr. Surya Teja Gavva |
-| 01-(CS)-440   | Artificial Intelligent    | 2018 (Undergrad)  | Prof. Abdeslam Boularias|
 | 01-(Math)-311    | Real Analysis      | 2019 (Undergrad)   | Prof. John man shun Ma |
 | 01-(Math)-373   | Numerical Analysis        | 2019 (Undergrad)   | Dr. Shane D. Kepley |
-| CS/CM 226  | Machine Learning for Bioinformatics   | 2019  | Prof. Sriram Sankararaman |
-| ECE 236B  | Convex Optimization   | 2020  | Prof. Lieven Vandenberghe |
 | Stats 201C  | Advanced Modeling and Inference  | 2020  | Prof. Qing Zhou |
 | Stats 200B  | Theoretical Stats  | 2021  | Prof. Arash A. Amini |
 | Stats 200C  | High Dimensional Stats  | 2021  | Prof. Arash A. Amini |
+| ECE 236B  | Convex Optimization   | 2020  | Prof. Lieven Vandenberghe |
+| CS/CM 226  | Machine Learning for Bioinformatics   | 2019  | Prof. Sriram Sankararaman |
+| 01-(CS)-440   | Artificial Intelligent    | 2018 (Undergrad)  | Prof. Abdeslam Boularias|
 | CS 260 | Machine Learning Algorithms | 2021 | Prof. Quanquan Gu |
 | CS 269 | Large Scale Machine Learning | 2021 | Prof. Baharan Mirzasoleiman |
 | CS 267A | Probabilistic Programming and Relational Learning | 2022 | Prof. Guy Van den Broeck |
