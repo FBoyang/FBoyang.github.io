@@ -67,7 +67,7 @@ redirect_from:
 
     .content th, .content td {
         padding: 8px;
-        font-size: 1.1em;
+        font-size: 1.2em;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -120,7 +120,7 @@ redirect_from:
                     <tr>
                         <th class="course-id-col">Course ID</th>
                         <th class="title-col">Title</th>
-                        <th class="year-col">Year Taken</th>
+                        <th class="year-col">Year</th>
                         <th class="instructor-col">Instructor</th>
                     </tr>
                     <tr>
