@@ -19,22 +19,93 @@ redirect_from:
 ## Course Taken
 
 <em>These are some of the CS/Math/Stats courses I wish to highlight </em>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Information</title>
+    <style>
+        /* Basic CSS for styling */
+        .category {
+            margin-bottom: 10px;
+        }
+        .details {
+            display: none;
+        }
+    </style>
+</head>
+<body>
 
-| Course ID     | Title       | Year Taken  | Instructor  |
+    <h1>Course Information</h1>
+
+    <div class="category">
+        <h2>Math</h2>
+        <button onclick="toggleDetails('math')">Show/Hide Details</button>
+        <div id="mathDetails" class="details">
+            <ul>
+                <li>01-(Math)-428: Graph Theory (2017, Dr. Surya Teja Gavva)</li>
+                <li>01-(Math)-311: Real Analysis (2019, Prof. John man shun Ma)</li>
+                <li>01-(Math)-373: Numerical Analysis (2019, Dr. Shane D. Kepley)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>Stats</h2>
+        <button onclick="toggleDetails('stats')">Show/Hide Details</button>
+        <div id="statsDetails" class="details">
+            <ul>
+                <li>Stats 201C: Advanced Modeling and Inference (2020, Prof. Qing Zhou)</li>
+                <li>Stats 200B: Theoretical Stats (2021, Prof. Arash A. Amini)</li>
+                <li>Stats 200C: High Dimensional Stats (2021, Prof. Arash A. Amini)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>Machine Learning</h2>
+        <button onclick="toggleDetails('ml')">Show/Hide Details</button>
+        <div id="mlDetails" class="details">
+            <ul>
+                <li>ECE 236B: Convex Optimization (2020, Prof. Lieven Vandenberghe)</li>
+                <li>CS/CM 226: Machine Learning for Bioinformatics (2019, Prof. Sriram Sankararaman)</li>
+                <li>01-(CS)-440: Artificial Intelligent (2018, Prof. Abdeslam Boularias)</li>
+                <li>CS 260: Machine Learning Algorithms (2021, Prof. Quanquan Gu)</li>
+                <li>CS 269: Large Scale Machine Learning (2021, Prof. Baharan Mirzasoleiman)</li>
+                <li>CS 267A: Probabilistic Programming and Relational Learning (2022, Prof. Guy Van den Broeck)</li>
+                <li>CS 261: Deep Generative Models (2024, Prof. Aditya Grover)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleDetails(category) {
+            var detailsDiv = document.getElementById(category + "Details");
+            if (detailsDiv.style.display === "none") {
+                detailsDiv.style.display = "block";
+            } else {
+                detailsDiv.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+<!-- | Course ID     | Title       | Year Taken  | Instructor  |
 | -----------   | ----------- | ----------- | ----------- |
 | 01-(Math)-428   | Graph Theory    | 2017 (Undergrad)  | Dr. Surya Teja Gavva |
 | 01-(Math)-311    | Real Analysis      | 2019 (Undergrad)   | Prof. John man shun Ma |
 | 01-(Math)-373   | Numerical Analysis        | 2019 (Undergrad)   | Dr. Shane D. Kepley |
 | Stats 201C  | Advanced Modeling and Inference  | 2020  | Prof. Qing Zhou |
 | Stats 200B  | Theoretical Stats  | 2021  | Prof. Arash A. Amini |
+| 01-(CS)-440   | Artificial Intelligent    | 2018 (Undergrad)  | Prof. Abdeslam Boularias|
 | Stats 200C  | High Dimensional Stats  | 2021  | Prof. Arash A. Amini |
 | ECE 236B  | Convex Optimization   | 2020  | Prof. Lieven Vandenberghe |
 | CS/CM 226  | Machine Learning for Bioinformatics   | 2019  | Prof. Sriram Sankararaman |
-| 01-(CS)-440   | Artificial Intelligent    | 2018 (Undergrad)  | Prof. Abdeslam Boularias|
 | CS 260 | Machine Learning Algorithms | 2021 | Prof. Quanquan Gu |
 | CS 269 | Large Scale Machine Learning | 2021 | Prof. Baharan Mirzasoleiman |
 | CS 267A | Probabilistic Programming and Relational Learning | 2022 | Prof. Guy Van den Broeck |
-| CS 261 | Deep Generative Models | 2024 | Prof. Aditya Grover |
+| CS 261 | Deep Generative Models | 2024 | Prof. Aditya Grover | -->
 
 ## Teaching Assistantship
 
