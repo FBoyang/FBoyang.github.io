@@ -42,7 +42,7 @@ redirect_from:
     .collapsible {
         cursor: pointer;
         padding: 8px;
-        width: 200px;
+        width: 50px;
         border: none;
         text-align: left;
         outline: none;
@@ -176,7 +176,7 @@ redirect_from:
             </td>
         </tr>
         <tr>
-            <td class="collapsible" onclick="toggleContent(this)">Machine Learning</td>
+            <td class="collapsible" onclick="toggleContent(this)">ML/AI</td>
             <td colspan="4" class="content ml-content">
                 <table>
                     <tr>
