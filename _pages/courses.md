@@ -67,7 +67,7 @@ redirect_from:
 
     .content th, .content td {
         padding: 8px;
-        font-size: 0.9em;
+        font-size: 1.1em;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -78,11 +78,11 @@ redirect_from:
     }
 
     .title-col {
-        width: 40%;
+        width: 45%;
     }
 
     .year-col {
-        width: 15%;
+        width: 10%;
     }
 
     .instructor-col {
