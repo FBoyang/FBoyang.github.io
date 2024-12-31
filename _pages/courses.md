@@ -151,7 +151,7 @@ redirect_from:
                     <tr>
                         <th class="course-id-col">Course ID</th>
                         <th class="title-col">Title</th>
-                        <th class="year-col">Year Taken</th>
+                        <th class="year-col">Year</th>
                         <th class="instructor-col">Instructor</th>
                     </tr>
                     <tr>
@@ -182,7 +182,7 @@ redirect_from:
                     <tr>
                         <th class="course-id-col">Course ID</th>
                         <th class="title-col">Title</th>
-                        <th class="year-col">Year Taken</th>
+                        <th class="year-col">Year</th>
                         <th class="instructor-col">Instructor</th>
                     </tr>
                     <tr>
