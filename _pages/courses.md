@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ## Mentorship Experience
 
-| Mentored student | Position        | Year              |
+<!-- | Mentored student | Position        | Year              |
 | ---------------- | ----------------|  ---------------- | 
 | [Prateek Anand](https://www.linkedin.com/in/prateek-anand-21431a1b4/) | Undergrad student (Now Ph.D. student); UCLA      | 2022 - 2024   |
 | [Aakarsh Anand](https://www.linkedin.com/in/aakarsh-anand-8943211b4/) | Undergrad student (Now Ph.D. student); UCLA      | 2022 - 2024   |
@@ -290,6 +290,88 @@ document.addEventListener('DOMContentLoaded', function() {
 | Nicholas Liu | Undergrad student; Brown University      | 2021   |
 | Trong Pham | Undergrad student; California State University, Fullerton      | 2021   |
 | Kevin Delao | Master student; California State University Los Angeles    | 2020  |
-| Maya Singh | Undergrad student; UCLA      | 2020   |
+| Maya Singh | Undergrad student; UCLA      | 2020   | -->
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid black; padding: 8px; text-align: left;">Mentored student</th>
+      <th style="border: 1px solid black; padding: 8px; text-align: left;">Position</th>
+      <th style="border: 1px solid black; padding: 8px; text-align: left;">Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;"><a href="https://www.linkedin.com/in/prateek-anand-21431a1b4/">Prateek Anand</a></td>
+      <td style="border: 1px solid black; padding: 8px;">Undergrad student (Now Ph.D. student); UCLA</td>
+      <td style="border: 1px solid black; padding: 8px;">2022 - 2024</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;"><a href="https://www.linkedin.com/in/aakarsh-anand-8943211b4/">Aakarsh Anand</a></td>
+      <td style="border: 1px solid black; padding: 8px;">Undergrad student (Now Ph.D. student); UCLA</td>
+      <td style="border: 1px solid black; padding: 8px;">2022 - 2024</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;"><a href="https://zhengtong-liu.github.io/">Zhengtong Liu</a></td>
+      <td style="border: 1px solid black; padding: 8px;">Undergrad student (Now Ph.D. student); UCLA</td>
+      <td style="border: 1px solid black; padding: 8px;">2021 - 2023</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="margin-top: 10px;">
+  <button onclick="toggleMoreMentorship()" id="toggleButton" style="margin-top: 10px;">More Mentorship Experience</button>
+  <div id="moreMentorship" style="display: none; margin-top: 10px;">
+    <table style="width: 100%; border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th style="border: 1px solid black; padding: 8px; text-align: left;">Mentored student</th>
+          <th style="border: 1px solid black; padding: 8px; text-align: left;">Position</th>
+          <th style="border: 1px solid black; padding: 8px; text-align: left;">Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">Henry Koelling</td>
+          <td style="border: 1px solid black; padding: 8px;">Undergrad student; Carleton College</td>
+          <td style="border: 1px solid black; padding: 8px;">2021</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">Nicholas Liu</td>
+          <td style="border: 1px solid black; padding: 8px;">Undergrad student; Brown University</td>
+          <td style="border: 1px solid black; padding: 8px;">2021</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">Trong Pham</td>
+          <td style="border: 1px solid black; padding: 8px;">Undergrad student; California State University, Fullerton</td>
+          <td style="border: 1px solid black; padding: 8px;">2021</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">Kevin Delao</td>
+          <td style="border: 1px solid black; padding: 8px;">Master student; California State University Los Angeles</td>
+          <td style="border: 1px solid black; padding: 8px;">2020</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">Maya Singh</td>
+          <td style="border: 1px solid black; padding: 8px;">Undergrad student; UCLA</td>
+          <td style="border: 1px solid black; padding: 8px;">2020</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  function toggleMoreMentorship() {
+    const moreMentorship = document.getElementById("moreMentorship");
+    const toggleButton = document.getElementById("toggleButton");
+    if (moreMentorship.style.display === "none") {
+      moreMentorship.style.display = "block";
+      toggleButton.textContent = "Less Mentorship Experience";
+    } else {
+      moreMentorship.style.display = "none";
+      toggleButton.textContent = "More Mentorship Experience";
+    }
+  }
+</script>
 
 
