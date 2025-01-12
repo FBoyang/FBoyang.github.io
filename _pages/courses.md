@@ -291,6 +291,8 @@ document.addEventListener('DOMContentLoaded', function() {
 | Trong Pham | Undergrad student; California State University, Fullerton      | 2021   |
 | Kevin Delao | Master student; California State University Los Angeles    | 2020  |
 | Maya Singh | Undergrad student; UCLA      | 2020   | -->
+## Mentorship Experience
+
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
     <tr>
@@ -318,9 +320,20 @@ document.addEventListener('DOMContentLoaded', function() {
   </tbody>
 </table>
 
-<div style="margin-top: 10px;">
-  <button onclick="toggleMoreMentorship()" id="toggleButton" style="margin-top: 10px;">More Mentorship Experience</button>
-  <div id="moreMentorship" style="display: none; margin-top: 10px;">
+<div style="margin-top: 10px; text-align: center;">
+  <button onclick="toggleMoreMentorship()" id="toggleButton" style="
+    background-color: #f8f9fa; 
+    color: #343a40; 
+    border: 2px solid #343a40; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    font-family: 'Arial', sans-serif; 
+    transition: background-color 0.3s ease, color 0.3s ease;">
+    More Mentorship Experience
+  </button>
+  <div id="moreMentorship" style="display: none; margin-top: 15px;">
     <table style="width: 100%; border-collapse: collapse;">
       <thead>
         <tr>
@@ -367,11 +380,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (moreMentorship.style.display === "none") {
       moreMentorship.style.display = "block";
       toggleButton.textContent = "Less Mentorship Experience";
+      toggleButton.style.backgroundColor = "#343a40";
+      toggleButton.style.color = "#f8f9fa";
     } else {
       moreMentorship.style.display = "none";
       toggleButton.textContent = "More Mentorship Experience";
+      toggleButton.style.backgroundColor = "#f8f9fa";
+      toggleButton.style.color = "#343a40";
     }
   }
 </script>
+
 
 
