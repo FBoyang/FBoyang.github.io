@@ -12,7 +12,7 @@ author_profile: true
     <h3>University of California, Los Angeles</h3>
     <p>Ph.D. in Computer Science<br>
     <span style="font-style: italic; font-size: 0.9em;">Designated Emphasis in Computational and Genomic Biology</span><br>
-    09/2019 - Present</p>
+    09/2019 - 02/2025</p>
   </div>
 
   <div class="education-details">
