@@ -18,8 +18,8 @@ I am a postdoctoral research fellow at [Harvard Medical School](https://hms.harv
 
 
 ### Selected Awards:
-* UCLA Dissertation Year Fellowship: A $20,000 stipend plus standard tuition and fees [2024]
-* Warren Alpert Computational Biology and AI Network Fellow [2024]
+* UCLA Dissertation Year Fellowship: A $20,000 stipend plus standard tuition and fees [2024-2025]
+* Warren Alpert Computational Biology and AI Network Fellow [2024-2025]
 * [Outstanding Research Departmental Nomination](https://www.cs.ucla.edu/the-sriram-lab-achieves-breakthrough-discovery-in-understanding-complex-genetic-and-disease-relationships/) [2023]
 * Outstanding Mentorship Award,  *Bruins in Genomics Summer Research Program* [2021-2022]
 * Graduate Division Fellowship Award [2020]
