@@ -27,6 +27,12 @@ author_profile: true
     B.S. in Mathematics (2nd Degree)<br>
     01/2016 - 05/2019</p>
   </div>
+
+  <div class="education-details">
+    <h3>Huazhong University of Science and Technology</h3>
+    <p>B.S. in Bioinformatics Honor Program (transferred)<br>
+    09/2014 - 01/2016</p>
+  </div>
 </div>
 
 
