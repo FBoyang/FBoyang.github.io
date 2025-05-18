@@ -29,7 +29,7 @@ author_profile: true
   </div>
 
   <div class="education-details">
-    <h3>Huazhong University of Science and Technology - Wuhan</h3>
+    <h3>Huazhong University of Science and Technology</h3>
     <p>B.S. in Bioinformatics Honor Program (transferred)<br>
     09/2014 - 01/2016</p>
   </div>
