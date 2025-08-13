@@ -24,9 +24,11 @@ Few things bring me more joy than watching the friends I’ve mentored/ worked w
 
 source: [LinkedIn Recommendations](https://www.linkedin.com/in/boyang-fu/details/recommendations/?detailScreenTabIndex=0)
 
-I summarized some of the frequently asking questions from my friends who are not familiar with our field
+
 
 ### Q&A About My Research
+
+I summarized some of the frequently asking questions from my friends who are not familiar with our field
 
 <details>
 <summary><strong>Am I a biologist or a computer scientist?</strong></summary>
