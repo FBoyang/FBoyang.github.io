@@ -9,8 +9,9 @@ redirect_from:
 ---
 
 ### Customer Reviews
+> *"We rise by lifting others."* - Robert Ingersoll
 
-There is never a more enjoyable moment than seeing the students/ friends I mentored thrive. And I get great luck in getting some of their feedbacks.
+Few things bring me more joy than watching the friends I’ve mentored/ worked with grow and succeed. I’ve been fortunate enough to receive some of their kind words along the way.
 
 ---
 
