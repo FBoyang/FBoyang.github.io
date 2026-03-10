@@ -95,9 +95,16 @@ a:hover {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 2rem;
-  /* Increased mobile margin from 1.5rem to 2rem */
+  padding: 0 1.5rem;
   width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+@media (min-width: 480px) {
+  .container {
+    padding: 0 2.5rem;
+  }
 }
 
 @media (min-width: 768px) {
