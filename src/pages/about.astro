@@ -171,20 +171,20 @@ import Layout from "../layouts/Layout.astro";
     color: var(--text-secondary);
     line-height: 1.7;
   }
-  .testimonials,
+  .Mentorship,
   .faq-list {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
   }
-  .testimonial,
+  .Mentorship,
   .faq {
     background: var(--bg-secondary);
     border: 1px solid var(--bg-tertiary);
     border-radius: var(--radius-md);
     overflow: hidden;
   }
-  .testimonial summary,
+  .Mentorship summary,
   .faq summary {
     padding: var(--spacing-md) var(--spacing-lg);
     cursor: pointer;
@@ -195,7 +195,7 @@ import Layout from "../layouts/Layout.astro";
     align-items: center;
     gap: var(--spacing-sm);
   }
-  .testimonial summary::before,
+  .Mentorship summary::before,
   .faq summary::before {
     content: "+";
     font-weight: 700;
@@ -205,15 +205,15 @@ import Layout from "../layouts/Layout.astro";
     width: 1.5rem;
     text-align: center;
   }
-  .testimonial[open] summary::before,
+  .Mentorship[open] summary::before,
   .faq[open] summary::before {
     content: "\2212";
   }
-  .testimonial summary::-webkit-details-marker,
+  .Mentorship summary::-webkit-details-marker,
   .faq summary::-webkit-details-marker {
     display: none;
   }
-  .testimonial p,
+  .Mentorship p,
   .faq p {
     padding: 0 var(--spacing-lg) var(--spacing-lg)
       calc(var(--spacing-lg) + 1.5rem + var(--spacing-sm));
