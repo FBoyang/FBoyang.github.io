@@ -60,6 +60,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 h1,
@@ -94,14 +95,14 @@ a:hover {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
-  /* Generous margin for mobile */
+  padding: 0 2rem;
+  /* Increased mobile margin from 1.5rem to 2rem */
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   .container {
     padding: 0 var(--spacing-xl);
-    /* Expansive margin for computers */
   }
 }
 
