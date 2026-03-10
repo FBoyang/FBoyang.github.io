@@ -1,0 +1,116 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={`${post.data.title} | Boyang Fu`}>
+  <div class="container section">
+    <article class="blog-post">
+      <header class="post-header">
+        <a href="/blog" class="back-link">&larr; Back to Blog</a>
+        <h1>{post.data.title}</h1>
+        <div class="post-meta">
+          <time>{new Date(post.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+          {post.data.tags && (
+            <div class="tags">
+              {post.data.tags.map(tag => <span class="tag">{tag}</span>)}
+            </div>
+          )}
+        </div>
+      </header>
+      <div class="prose">
+        <Content />
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+
+<style>
+  .blog-post {
+    max-width: var(--max-width);
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .back-link:hover {
+    color: var(--accent-color);
+  }
+  .post-header {
+    margin-bottom: var(--spacing-xl);
+  }
+  .post-header h1 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+  }
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .tag {
+    background: var(--bg-tertiary);
+    padding: 0.15rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .prose {
+    line-height: 1.8;
+  }
+  .prose :global(h2), .prose :global(h3) {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+  }
+  .prose :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    margin: var(--spacing-lg) 0;
+    box-shadow: var(--shadow-md);
+  }
+  .prose :global(ul), .prose :global(ol) {
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-lg);
+    color: var(--text-secondary);
+  }
+  .prose :global(li) {
+    margin-bottom: var(--spacing-sm);
+  }
+  .prose :global(blockquote) {
+    border-left: 4px solid var(--accent-color);
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    background: var(--bg-tertiary);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+  .prose :global(.katex-display) {
+    overflow-x: auto;
+    padding: var(--spacing-sm) 0;
+  }
+</style>

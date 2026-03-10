@@ -1,0 +1,162 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PublicationCard from "../components/PublicationCard.astro";
+import { getCollection } from "astro:content";
+
+const publications = await getCollection("publications");
+// Sort by date descending
+publications.sort((a, b) => {
+  const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+  const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+  return dateB - dateA;
+});
+
+const featuredPublications = publications.filter((pub) => pub.data.featured);
+const otherPublications = publications; // Keep all in chronological order
+---
+
+<Layout title="Publications | Boyang">
+  <div class="container section">
+    <h1>Publications</h1>
+    <p class="subtitle">
+      A complete list of my published papers and preprints.
+    </p>
+
+    {
+      featuredPublications.length > 0 && (
+        <section class="featured-section">
+          <h2>Featured Work</h2>
+          <div class="featured-list">
+            {featuredPublications.map((pub) => (
+              <PublicationCard publication={pub} compact={false} />
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    <section class="all-publications-section">
+      <div class="list-header">
+        <h2>All Publications</h2>
+
+        <div class="format-filters" id="format-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Journals">Journals</button>
+          <button class="filter-btn" data-filter="Conferences"
+            >Conferences</button
+          >
+          <button class="filter-btn" data-filter="Preprints">Preprints</button>
+        </div>
+      </div>
+
+      <div class="publications-list" id="publications-list">
+        {
+          otherPublications.map((pub) => (
+            <div
+              class="pub-list-wrapper"
+              data-format={pub.data.format || "other"}
+            >
+              <PublicationCard publication={pub} compact={true} />
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<script>
+  // Simple Vanilla JS client-side filtering script
+  document.addEventListener("DOMContentLoaded", () => {
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const pubItems = document.querySelectorAll(".pub-list-wrapper");
+
+    if (!filterBtns || !pubItems) return;
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // Remove active class from all buttons
+        filterBtns.forEach((b) => b.classList.remove("active"));
+        // Add active class to clicked button
+        btn.classList.add("active");
+
+        const formatFn = btn.getAttribute("data-filter");
+
+        pubItems.forEach((item) => {
+          const itemFormat = item.getAttribute("data-format");
+          const htmlItem = item as HTMLElement;
+
+          if (formatFn === "all" || itemFormat === formatFn) {
+            htmlItem.style.display = "block";
+          } else {
+            htmlItem.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .subtitle {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    margin-bottom: var(--spacing-xl);
+  }
+  .featured-section {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 2px solid var(--bg-tertiary);
+  }
+  .featured-section h2,
+  .list-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+  .featured-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  /* Filter Styles */
+  .list-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+  .format-filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    background: var(--bg-secondary);
+    border: 1px solid var(--bg-tertiary);
+    color: var(--text-secondary);
+    padding: 0.35rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+  .filter-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--text-muted);
+  }
+  .filter-btn.active {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+  }
+
+  .publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Handled by compact card border-bottom */
+  }
+</style>

@@ -1,0 +1,192 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Experience | Boyang Fu">
+  <div class="container section">
+    <h1>Experience</h1>
+
+    <section class="exp-section">
+      <h2>Education</h2>
+      <div class="education-list">
+        <div class="edu-item">
+          <h3>University of California, Los Angeles</h3>
+          <p class="degree">Ph.D. in Computer Science</p>
+          <p class="detail">Designated Emphasis in Computational and Genomic Biology</p>
+          <p class="dates">09/2019 &ndash; 02/2025</p>
+        </div>
+        <div class="edu-item">
+          <h3>University of California, Los Angeles</h3>
+          <p class="degree">M.S. in Computer Science</p>
+          <p class="dates">09/2019 &ndash; 04/2022</p>
+        </div>
+        <div class="edu-item">
+          <h3>Rutgers University &ndash; New Brunswick</h3>
+          <p class="degree">B.S. in Computer Science &amp; B.S. in Mathematics (2nd Degree)</p>
+          <p class="dates">01/2016 &ndash; 05/2019</p>
+        </div>
+        <div class="edu-item">
+          <h3>Huazhong University of Science and Technology</h3>
+          <p class="degree">B.S. in Bioinformatics Honor Program (transferred)</p>
+          <p class="dates">09/2014 &ndash; 01/2016</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="exp-section">
+      <h2>Selected Experience</h2>
+      <div class="experience-list">
+        <div class="exp-item">
+          <div class="exp-logo">
+            <img src="/assets/images/experience/X.png" alt="X Development" onerror="this.style.display='none'" />
+          </div>
+          <div class="exp-details">
+            <h3>X Development LLC <span class="note">(formerly Google X)</span></h3>
+            <p class="role">AI Resident &middot; Mountain View, CA</p>
+            <p class="dates">01/2023 &ndash; 05/2023</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-logo">
+            <img src="/assets/images/experience/BIG.png" alt="BIG" onerror="this.style.display='none'" />
+          </div>
+          <div class="exp-details">
+            <h3>Bruins-In-Genomics (B.I.G.)</h3>
+            <p class="role">Research Intern &middot; Los Angeles, CA</p>
+            <p class="dates">06/2018 &ndash; 08/2018</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="exp-section">
+      <h2>Academic Service</h2>
+      <div class="service-block">
+        <h3>Journal Reviewer</h3>
+        <p>Nature Communications / AJHG / PLoS Computational Biology / IEEE Transactions on Computational Biology and Bioinformatics</p>
+      </div>
+      <div class="service-block">
+        <h3>Conference Reviewer</h3>
+        <p>ICML 2024 / ICLR 2024 / NeurIPS 2024, 2023, 2022, 2021 / MLCB 2024, 2023, 2022 / ISMB 2023 / RECOMB 2024, 2023, 2022</p>
+      </div>
+    </section>
+
+    <section class="exp-section">
+      <p class="cv-link">
+        <a href="/files/Resume.pdf" target="_blank">Download Full CV (PDF)</a>
+      </p>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .exp-section {
+    margin-bottom: var(--spacing-xl);
+  }
+  .exp-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--bg-tertiary);
+  }
+  .education-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+  .edu-item {
+    padding-left: var(--spacing-lg);
+    border-left: 3px solid var(--accent-light);
+  }
+  .edu-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+  .degree {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.15rem;
+  }
+  .detail {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.15rem;
+  }
+  .dates {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+  .exp-item {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+    padding: var(--spacing-lg);
+    background: var(--bg-secondary);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--radius-md);
+  }
+  .exp-logo {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .exp-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: var(--radius-sm);
+  }
+  .exp-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+  .note {
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  .role {
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.15rem;
+  }
+  .service-block {
+    margin-bottom: var(--spacing-lg);
+  }
+  .service-block h3 {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--accent-color);
+  }
+  .service-block p {
+    line-height: 1.8;
+  }
+  .cv-link a {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--accent-color);
+    color: var(--text-inverted);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .cv-link a:hover {
+    background: var(--accent-hover);
+    color: var(--text-inverted);
+  }
+  @media (max-width: 600px) {
+    .exp-item {
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+  }
+</style>

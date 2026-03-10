@@ -1,0 +1,281 @@
+---
+const { publication, compact = false } = Astro.props;
+---
+
+<div class={`publication-item ${compact ? "compact" : "card"}`}>
+  {
+    compact ? (
+      <div class="compact-content">
+        <div class="main-info">
+          <span class="compact-title">
+            {publication.data.paperurl ? (
+              <a href={publication.data.paperurl} target="_blank">
+                {publication.data.title}
+              </a>
+            ) : (
+              publication.data.title
+            )}
+          </span>
+          <span class="compact-authors" set:html={publication.data.citation} />
+          {publication.data.venue && (
+            <span class="compact-venue">{publication.data.venue}</span>
+          )}
+          {publication.data.date && (
+            <span class="compact-date">
+              {publication.data.date.getUTCFullYear()}
+            </span>
+          )}
+
+          <div class="inline-links">
+            {publication.data.paperurl && (
+              <a
+                href={publication.data.paperurl}
+                class="icon-link"
+                target="_blank"
+                title="PDF"
+              >
+                [PDF]
+              </a>
+            )}
+            {publication.data.code && (
+              <a
+                href={publication.data.code}
+                class="icon-link"
+                target="_blank"
+                title="Code"
+              >
+                [Code]
+              </a>
+            )}
+            {publication.data.bibtex && (
+              <a
+                href={publication.data.bibtex}
+                class="icon-link"
+                target="_blank"
+                title="BibTeX"
+              >
+                [BibTeX]
+              </a>
+            )}
+          </div>
+        </div>
+
+        {publication.data.theme_tags && publication.data.theme_tags.length > 0 && (
+          <div class="tags">
+            {publication.data.theme_tags.map((tag: string) => (
+              <span class="theme-tag" data-tag={tag.toLowerCase()}>
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    ) : (
+      <>
+        <div class="card-header">
+          <h3 class="title">
+            {publication.data.paperurl ? (
+              <a href={publication.data.paperurl} target="_blank">
+                {publication.data.title}
+              </a>
+            ) : (
+              publication.data.title
+            )}
+          </h3>
+          {publication.data.impact_statement && (
+            <p class="impact-statement">{publication.data.impact_statement}</p>
+          )}
+        </div>
+        <div class="meta">
+          {publication.data.venue && (
+            <span class="venue">{publication.data.venue}</span>
+          )}
+          {publication.data.date && (
+            <span class="date">• {publication.data.date.getUTCFullYear()}</span>
+          )}
+        </div>
+        {publication.data.citation && (
+          <div class="citation" set:html={publication.data.citation} />
+        )}
+        <div class="card-action-links">
+          {publication.data.paperurl && (
+            <a href={publication.data.paperurl} class="btn-sm" target="_blank">
+              PDF
+            </a>
+          )}
+          {publication.data.code && (
+            <a href={publication.data.code} class="btn-sm" target="_blank">
+              Code
+            </a>
+          )}
+          {publication.data.bibtex && (
+            <a href={publication.data.bibtex} class="btn-sm" target="_blank">
+              BibTeX
+            </a>
+          )}
+        </div>
+      </>
+    )
+  }
+</div>
+
+<style>
+  .publication-item {
+    margin-bottom: var(--spacing-md);
+  }
+
+  /* --- Card Style --- */
+  .publication-item.card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--bg-tertiary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    transition: transform var(--transition-fast),
+      box-shadow var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+  }
+  .publication-item.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-color);
+  }
+  .publication-item.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  .title {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 700;
+  }
+  .title a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .title a:hover {
+    color: var(--accent-color);
+  }
+  .impact-statement {
+    font-size: 1.05rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: var(--spacing-md);
+    margin-top: 0;
+  }
+  .meta {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+  }
+  .venue {
+    color: var(--accent-color);
+  }
+  .citation {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+  }
+
+  /* --- Compact List Style --- */
+  .publication-item.compact {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--bg-tertiary);
+    margin-bottom: 0;
+  }
+  .publication-item.compact:last-child {
+    border-bottom: none;
+  }
+  .compact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .main-info {
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+  .compact-title {
+    font-weight: 600;
+  }
+  .compact-title a {
+    color: var(--text-primary);
+  }
+  .compact-title a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+  }
+  .compact-authors {
+    color: var(--text-secondary);
+    margin-left: 0.25rem;
+    margin-right: 0.5rem;
+  }
+  .compact-venue {
+    font-style: italic;
+    color: var(--text-secondary);
+  }
+  .compact-date {
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-left: 0.25rem;
+    margin-right: 0.5rem;
+  }
+  .inline-links {
+    display: inline-flex;
+    gap: 0.4rem;
+    margin-left: 0.5rem;
+  }
+  .icon-link {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+  .icon-link:hover {
+    color: var(--text-primary);
+  }
+
+  /* --- Tags --- */
+  .tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+  }
+  .theme-tag {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  /* Button Links */
+  .card-action-links {
+    display: flex;
+    gap: var(--spacing-sm);
+  }
+  .btn-sm {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+  .btn-sm:hover {
+    background: var(--accent-color);
+    color: white;
+  }
+</style>

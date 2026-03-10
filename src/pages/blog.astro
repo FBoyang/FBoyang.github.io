@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+posts.sort((a, b) => {
+  const dateA = new Date(a.data.date).getTime();
+  const dateB = new Date(b.data.date).getTime();
+  return dateB - dateA;
+});
+---
+
+<Layout title="Blog | Boyang Fu">
+  <div class="container section">
+    <h1>Blog Posts</h1>
+    <p class="subtitle">Notes on machine learning, computational biology, and related topics.</p>
+
+    <div class="posts-list">
+      {posts.map(post => (
+        <a href={`/blog/${post.id}`} class="card post-card">
+          <div class="post-date">
+            <span class="month">{new Date(post.data.date).toLocaleDateString('en-US', { month: 'short' })}</span>
+            <span class="year">{new Date(post.data.date).getFullYear()}</span>
+          </div>
+          <div class="post-content">
+            <h3 class="title">{post.data.title}</h3>
+            {post.data.excerpt && <p class="excerpt">{post.data.excerpt}</p>}
+            {post.data.tags && (
+              <div class="tags">
+                {post.data.tags.map(tag => <span class="tag">{tag}</span>)}
+              </div>
+            )}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .subtitle {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    margin-bottom: var(--spacing-xl);
+  }
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  .post-card {
+    display: flex;
+    gap: var(--spacing-lg);
+    background: var(--bg-secondary);
+    border: 1px solid var(--bg-tertiary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .post-card:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-light);
+    color: inherit;
+  }
+  .post-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    padding-right: var(--spacing-lg);
+    border-right: 2px solid var(--bg-tertiary);
+  }
+  .month {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+  }
+  .year {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .post-content {
+    flex: 1;
+  }
+  .title {
+    font-size: 1.15rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+  }
+  .excerpt {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+  }
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .tag {
+    background: var(--bg-tertiary);
+    padding: 0.15rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  @media (max-width: 600px) {
+    .post-card {
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+    .post-date {
+      flex-direction: row;
+      border-right: none;
+      border-bottom: 2px solid var(--bg-tertiary);
+      padding-right: 0;
+      padding-bottom: var(--spacing-md);
+      gap: var(--spacing-sm);
+      justify-content: flex-start;
+    }
+  }
+</style>
