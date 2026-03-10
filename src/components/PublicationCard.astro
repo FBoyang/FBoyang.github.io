@@ -1,5 +1,12 @@
 ---
 const { publication, compact = false } = Astro.props;
+
+// Bold the author name 'Boyang Fu' and account for first-author asterisks
+const formattedCitation = publication.data.citation
+  ? publication.data.citation
+      .replace(/Boyang Fu\*/g, "<strong>Boyang Fu*</strong>")
+      .replace(/Boyang Fu(?!\*)/g, "<strong>Boyang Fu</strong>")
+  : "";
 ---
 
 <div class={`publication-item ${compact ? "compact" : "card"}`}>
@@ -16,7 +23,7 @@ const { publication, compact = false } = Astro.props;
               publication.data.title
             )}
           </span>
-          <span class="compact-authors" set:html={publication.data.citation} />
+          <span class="compact-authors" set:html={formattedCitation} />
           {publication.data.venue && (
             <span class="compact-venue">{publication.data.venue}</span>
           )}
@@ -94,8 +101,8 @@ const { publication, compact = false } = Astro.props;
             <span class="date">• {publication.data.date.getUTCFullYear()}</span>
           )}
         </div>
-        {publication.data.citation && (
-          <div class="citation" set:html={publication.data.citation} />
+        {formattedCitation && (
+          <div class="citation" set:html={formattedCitation} />
         )}
         <div class="card-action-links">
           {publication.data.paperurl && (
@@ -203,6 +210,8 @@ const { publication, compact = false } = Astro.props;
   }
   .compact-title {
     font-weight: 600;
+    display: block;
+    margin-bottom: 0.2rem;
   }
   .compact-title a {
     color: var(--text-primary);
@@ -213,7 +222,6 @@ const { publication, compact = false } = Astro.props;
   }
   .compact-authors {
     color: var(--text-secondary);
-    margin-left: 0.25rem;
     margin-right: 0.5rem;
   }
   .compact-venue {
