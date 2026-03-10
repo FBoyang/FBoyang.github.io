@@ -2,24 +2,32 @@
 
 :root {
   /* Colors */
-  --bg-primary: #f8fafc; /* Slate 50 */
+  --bg-primary: #f8fafc;
+  /* Slate 50 */
   --bg-secondary: #ffffff;
-  --bg-tertiary: #f1f5f9; /* Slate 100 */
-  --text-primary: #0f172a; /* Slate 900 */
-  --text-secondary: #475569; /* Slate 600 */
-  --text-muted: #94a3b8; /* Slate 400 */
+  --bg-tertiary: #f1f5f9;
+  /* Slate 100 */
+  --text-primary: #0f172a;
+  /* Slate 900 */
+  --text-secondary: #475569;
+  /* Slate 600 */
+  --text-muted: #94a3b8;
+  /* Slate 400 */
   --text-inverted: #ffffff;
-  
-  --accent-color: #0369a1; /* Sky 700 - Academic blue */
-  --accent-hover: #0284c7; /* Sky 600 */
-  --accent-light: #e0f2fe; /* Sky 100 */
+
+  --accent-color: #0369a1;
+  /* Sky 700 - Academic blue */
+  --accent-hover: #0284c7;
+  /* Sky 600 */
+  --accent-light: #e0f2fe;
+  /* Sky 100 */
 
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-serif: 'Merriweather', Georgia, serif;
-  
+
   /* Layout */
-  --max-width: 800px;
+  --max-width: 1000px;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
@@ -32,7 +40,7 @@
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  
+
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -54,7 +62,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: var(--spacing-sm);
@@ -96,7 +109,9 @@ a:hover {
   color: var(--text-secondary);
 }
 
-.prose h1, .prose h2, .prose h3 {
+.prose h1,
+.prose h2,
+.prose h3 {
   font-family: var(--font-sans);
   margin-top: var(--spacing-xl);
 }
