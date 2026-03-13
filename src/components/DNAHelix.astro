@@ -73,12 +73,12 @@
       // Pre-allocate particles to avoid garbage collection during animation
       this.particles = [];
 
-      const numRungs = 80; // Density of the DNA
-      const pointsPerRung = 22; // Blocks per connection
-      const twist = 4 * Math.PI; // Total twist from top to bottom
+      const numPoints = 600; // Density of the continuous backbones
+      const twist = 3 * Math.PI; // Total twist from top to bottom - elongated pitch
 
-      for (let i = 0; i < numRungs; i++) {
-        const normalizedY = (i / (numRungs - 1)) - 0.5; // -0.5 to 0.5
+      // 1. Two Distinct Backbones
+      for (let i = 0; i < numPoints; i++) {
+        const normalizedY = (i / (numPoints - 1)) - 0.5; // -0.5 to 0.5
         const phaseOffset = normalizedY * twist;
 
         // Strand 1
@@ -98,8 +98,17 @@
           normalizedY,
           x: 0, y: 0, z: 0
         });
+      }
 
-        // Rung particles (connecting the strands)
+      // 2. The Base Pairs (Rungs) at regular, sparse intervals
+      const numRungs = 20;
+      const pointsPerRung = 22; // Blocks per connection
+
+      for (let i = 0; i < numRungs; i++) {
+        // Offset slightly to keep them within bounds and avoid extreme top/bottom
+        const normalizedY = ((i + 0.5) / numRungs) - 0.5;
+        const phaseOffset = normalizedY * twist;
+
         for (let j = 1; j < pointsPerRung - 1; j++) {
            const t = j / (pointsPerRung - 1); // 0.0 to 1.0
            this.particles.push({
