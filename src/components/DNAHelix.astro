@@ -1,0 +1,203 @@
+---
+// Custom Astro component for a highly performant, dynamic, rotating DNA double helix.
+---
+
+<dna-helix>
+  <canvas></canvas>
+</dna-helix>
+
+<style>
+  dna-helix {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    overflow: hidden;
+    background: transparent;
+  }
+  canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 600px; /* Limit width for aesthetic framing */
+  }
+</style>
+
+<script>
+  class DNAHelixComponent extends HTMLElement {
+    constructor() {
+      super();
+      this.canvas = this.querySelector('canvas');
+      this.ctx = this.canvas.getContext('2d', { alpha: true });
+      this.particles = [];
+      this.sortList = [];
+      this.animationId = null;
+      this.time = 0;
+
+      this.resize = this.resize.bind(this);
+      this.animate = this.animate.bind(this);
+    }
+
+    connectedCallback() {
+      window.addEventListener('resize', this.resize);
+      // Wait a tick for CSS to apply and give the canvas actual dimensions
+      setTimeout(() => {
+        this.resize();
+        this.initParticles();
+        this.animate();
+      }, 0);
+    }
+
+    disconnectedCallback() {
+      window.removeEventListener('resize', this.resize);
+      if (this.animationId) {
+        cancelAnimationFrame(this.animationId);
+      }
+    }
+
+    resize() {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = this.canvas.getBoundingClientRect();
+
+      this.canvas.width = rect.width * dpr;
+      this.canvas.height = rect.height * dpr;
+
+      this.ctx.scale(dpr, dpr);
+      this.width = rect.width;
+      this.height = rect.height;
+    }
+
+    initParticles() {
+      // Pre-allocate particles to avoid garbage collection during animation
+      this.particles = [];
+
+      const numPoints = 600; // Density of the continuous backbones
+      const twist = 3 * Math.PI; // Total twist from top to bottom - elongated pitch
+
+      // 1. Two Distinct Backbones
+      for (let i = 0; i < numPoints; i++) {
+        const normalizedY = (i / (numPoints - 1)) - 0.5; // -0.5 to 0.5
+        const phaseOffset = normalizedY * twist;
+
+        // Strand 1
+        this.particles.push({
+          type: 'strand',
+          yPhase: phaseOffset,
+          xPhase: 0,
+          normalizedY,
+          x: 0, y: 0, z: 0
+        });
+
+        // Strand 2
+        this.particles.push({
+          type: 'strand',
+          yPhase: phaseOffset,
+          xPhase: Math.PI,
+          normalizedY,
+          x: 0, y: 0, z: 0
+        });
+      }
+
+      // 2. The Base Pairs (Rungs) at regular, sparse intervals
+      const numRungs = 20;
+      const pointsPerRung = 22; // Blocks per connection
+
+      for (let i = 0; i < numRungs; i++) {
+        // Offset slightly to keep them within bounds and avoid extreme top/bottom
+        const normalizedY = ((i + 0.5) / numRungs) - 0.5;
+        const phaseOffset = normalizedY * twist;
+
+        for (let j = 1; j < pointsPerRung - 1; j++) {
+           const t = j / (pointsPerRung - 1); // 0.0 to 1.0
+           this.particles.push({
+             type: 'rung',
+             yPhase: phaseOffset,
+             t,
+             normalizedY,
+             x: 0, y: 0, z: 0
+           });
+        }
+      }
+
+      // Pointer array for Z-sorting without mutating original particle array
+      this.sortList = [...this.particles];
+    }
+
+    animate() {
+      this.ctx.clearRect(0, 0, this.width, this.height);
+
+      this.time += 0.015; // Rotation speed
+
+      const centerY = this.height / 2;
+      const centerX = this.width / 2;
+
+      // Responsive sizing based on canvas dimensions
+      const radius = Math.min(this.width, this.height) * 0.3;
+      const heightScale = this.height * 0.7;
+
+      // Update particle positions
+      for (let i = 0; i < this.particles.length; i++) {
+        const p = this.particles[i];
+
+        // Organic motion: sine wave for a fluid, floating, 'breathing' effect
+        const breathingOffset = Math.sin(this.time * 2 + p.normalizedY * Math.PI * 3) * 15;
+        p.y = centerY + (p.normalizedY * heightScale) + breathingOffset;
+
+        const angle = this.time * 1.5 + p.yPhase;
+
+        if (p.type === 'strand') {
+          const strandAngle = angle + p.xPhase;
+          p.x = centerX + Math.cos(strandAngle) * radius;
+          p.z = Math.sin(strandAngle);
+        } else {
+          // Interpolate position between the two strands for rungs
+          const angle1 = angle;
+          const angle2 = angle + Math.PI;
+
+          const x1 = Math.cos(angle1) * radius;
+          const z1 = Math.sin(angle1);
+          const x2 = Math.cos(angle2) * radius;
+          const z2 = Math.sin(angle2);
+
+          p.x = centerX + x1 + (x2 - x1) * p.t;
+          p.z = z1 + (z2 - z1) * p.t;
+        }
+      }
+
+      // Z-sorting: Painter's algorithm to render from back to front
+      this.sortList.sort((a, b) => a.z - b.z);
+
+      // Render particles
+      for (let i = 0; i < this.sortList.length; i++) {
+        const p = this.sortList[i];
+
+        // Normalize Z from [-1, 1] to [0, 1] where 1 is at the front
+        const normalizedZ = (p.z + 1) / 2;
+
+        // Scale pixel sizes slightly based on depth
+        const baseSize = p.type === 'strand' ? 3.5 : 2;
+        const size = baseSize + (normalizedZ * 2.5);
+
+        // Atmospheric Depth of Field:
+        // Front (1.0) -> Dark charcoal grey: rgb(40,40,40), fully opaque
+        // Back (0.0) -> Light silver: rgb(200,200,200), semi-transparent
+        const colorVal = Math.floor(200 - (160 * normalizedZ));
+        const alpha = 0.15 + (0.85 * normalizedZ);
+
+        this.ctx.fillStyle = `rgba(${colorVal}, ${colorVal}, ${colorVal}, ${alpha})`;
+
+        // Render as a square 'pixel' block
+        this.ctx.fillRect(p.x - size / 2, p.y - size / 2, size, size);
+      }
+
+      this.animationId = requestAnimationFrame(this.animate);
+    }
+  }
+
+  // Register the custom element exactly once
+  if (!customElements.get('dna-helix')) {
+    customElements.define('dna-helix', DNAHelixComponent);
+  }
+</script>
