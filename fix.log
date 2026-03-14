@@ -1,0 +1,4 @@
+Re-added padding: 0 var(--spacing-md) to .container layout that was being overridden by .section, ensuring text has a healthy margin from the edges.
+Updated the Navigation menu .site-nav with width: 100% and justify-content: center so the links successfully wrap properly on small mobile devices without cascading into horizontal scrolling.
+Updated the html, body styles to enforce max-width: 100% rather than 100vw which caused viewport zooming issues with horizontal scroll boundaries.
+Redesigned the flex-logic in about.astro's summary items (like Mentee 1 & 2) so they gracefully handle multi-line text breaking without snapping or squishing the inline text.
