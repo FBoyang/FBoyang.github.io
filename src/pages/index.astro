@@ -1,46 +1,67 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const researchAreas = [
+  {
+    title: "Foundation models for genomics",
+    description:
+      "I build AI/ML models that learn regulatory information from DNA sequence and genetic variation, with an emphasis on scalable and biologically meaningful representations for human genomics.",
+  },
+  {
+    title: "Perturbation biology",
+    description:
+      "I study how sequence, regulatory context, and intervention shape transcriptomic responses, aiming to connect DNA-level regulation to cellular state changes under perturbation.",
+  },
+  {
+    title: "Statistical genetics and disease modeling",
+    description:
+      "I develop methods to characterize nonlinear variant effects, integrate multi-omic data, and improve causal interpretation of complex disease biology.",
+  },
+];
+
+const focusTags = [
+  "Functional genomics",
+  "Single-cell perturbation",
+  "Foundation models",
+  "Statistical genetics",
+  "Causal inference",
+];
 ---
 
-<Layout title="Boyang Fu - Postdoctoral Fellow at Harvard Medical School">
+<Layout title="Boyang Fu | AI/ML Researcher in Human Genetics and Genomics">
   <div class="container section">
-    <div class="hero">
-      <div class="hero-content prose">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">
+          Harvard Medical School · Department of Biomedical Informatics
+        </p>
         <h1>Boyang Fu (付伯阳)</h1>
-        <p class="subtitle">
-          Postdoctoral Fellow, Department of Biomedical Informatics, Harvard
-          Medical School
+        <p class="subtitle">AI/ML researcher in human genetics and genomics</p>
+
+        <p class="lead">
+          I develop machine learning methods for human genetics, functional
+          genomics, and perturbation biology. My research focuses on building
+          models that connect DNA sequence, genetic variation, and regulatory
+          intervention to molecular and cellular phenotypes, and eventually to
+          understand human complex diseases.
         </p>
+
         <p>
-          I am a postdoctoral research fellow at <a
-            href="https://hms.harvard.edu/"
-            target="_blank">Harvard Medical School</a
-          >, Department of Biomedical Informatics, advised by Prof. <a
-            href="https://zitniklab.hms.harvard.edu/bio/"
-            target="_blank">Marinka Zitnik</a
-          >. I received my Ph.D. in Computer Science at <a
-            href="http://www.ucla.edu/"
-            target="_blank">UCLA</a
-          >, where I was advised by Prof. <a
-            href="http://web.cs.ucla.edu/~sriram/"
-            target="_blank">Sriram Sankararaman</a
-          >. I earned my Bachelor's Degree (Summa Cum Laude) from <a
-            href="https://en.wikipedia.org/wiki/Rutgers_University"
-            target="_blank">Rutgers University</a
-          > with majors in Computer Science (Highest Honor) and Mathematics. Prior
-          to that, I attended <a
-            href="https://en.wikipedia.org/wiki/Huazhong_University_of_Science_and_Technology"
-            target="_blank">Huazhong University of Science and Technology</a
-          > and majored in bioinformatics (Honors Program), and transferred to Rutgers
-          University in January 2016.
+          I am a postdoctoral research fellow at
+          <a href="https://hms.harvard.edu/" target="_blank"
+            >Harvard Medical School</a
+          >, advised by Prof.
+          <a href="https://zitniklab.hms.harvard.edu/bio/" target="_blank"
+            >Marinka Zitnik</a
+          >. I received my Ph.D. in Computer Science from
+          <a href="http://www.ucla.edu/" target="_blank">UCLA</a>, where I was
+          advised by Prof.
+          <a href="http://web.cs.ucla.edu/~sriram/" target="_blank"
+            >Sriram Sankararaman</a
+          >.
         </p>
-        <p>
-          I develop AI/ML methods for complex biological data, with a particular
-          focus on human genetics and genomics. My research topics include
-          understanding nonlinear genetic variant behavior in high-dimensional
-          settings, using multi-omics to decode functional genomics, and
-          leveraging genetic variation for causal inference.
-        </p><div class="social-links">
+
+        <div class="social-links">
           <a
             href="https://scholar.google.com/citations?user=baYulmEAAAAJ&hl=en"
             target="_blank">Google Scholar</a
@@ -53,181 +74,206 @@ import Layout from "../layouts/Layout.astro";
           <a href="mailto:fbyang1995@gmail.com">Email</a>
         </div>
       </div>
+
       <div class="hero-image">
         <img src="/images/boyang.jpeg" alt="Boyang Fu" />
       </div>
-    </div>
+    </section>
 
-    <div class="interests section">
-      <h2>Field of Interests</h2>
+    <section class="section research-overview">
+      <h2>Research</h2>
+      <p class="section-intro">
+        Broadly, I am interested in using AI/ML to understand how human genomes
+        encode regulation, how perturbations reshape cellular state, and how
+        genetic variation talks to each other to influence complex human traits
+        and diseases.
+      </p>
+
+      <div class="research-grid">
+        {
+          researchAreas.map((area) => (
+            <article class="research-card">
+              <h3>{area.title}</h3>
+              <p>{area.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Current Interests</h2>
       <ul class="tag-list">
-        <li>Computational genomics</li>
-        <li>Large-scale AI/ML</li>
-        <li>Causal inference & Interpretability</li>
+        {focusTags.map((tag) => <li>{tag}</li>)}
       </ul>
-    </div>
-
-    <div class="awards section">
-      <h2>Selected Awards</h2>
-      <ul class="awards-list">
-        <li>
-          <span class="award-name">UCLA Dissertation Year Fellowship</span>
-          <span class="award-detail"
-            >$20,000 stipend plus standard tuition and fees</span
-          >
-          <span class="award-year">[2024-2025]</span>
-        </li>
-        <li>
-          <span class="award-name"
-            >Warren Alpert Computational Biology and AI Network Fellow</span
-          >
-          <span class="award-year">[2024-2025]</span>
-        </li>
-        <li>
-          <span class="award-name"
-            ><a
-              href="https://www.cs.ucla.edu/the-sriram-lab-achieves-breakthrough-discovery-in-understanding-complex-genetic-and-disease-relationships/"
-              target="_blank">Outstanding Research Departmental Nomination</a
-            >
-          </span>
-          <span class="award-year">[2023]</span>
-        </li>
-        <li>
-          <span class="award-name">Outstanding Mentorship Award</span>
-          <span class="award-detail"
-            >Bruins in Genomics Summer Research Program</span
-          >
-          <span class="award-year">[2021-2022]</span>
-        </li>
-        <li>
-          <span class="award-name">Graduate Division Fellowship Award</span>
-          <span class="award-year">[2020]</span>
-        </li>
-        <li>
-          <span class="award-name">Academic Excellence Scholarship</span>
-          <span class="award-year">[2016-2018]</span>
-        </li>
-      </ul>
-    </div>
+    </section>
   </div>
 </Layout>
 
 <style>
   .hero {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 240px;
     gap: var(--spacing-xl);
-    align-items: center;
-    margin-bottom: var(--spacing-xl);
+    align-items: start;
+    margin-bottom: var(--spacing-2xl, 3rem);
   }
-  .hero-content {
-    flex: 1;
-  }
+
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
+    line-height: 1.1;
     margin-bottom: var(--spacing-sm);
   }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-sm);
+  }
+
   .subtitle {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--text-secondary);
     margin-bottom: var(--spacing-lg);
     font-weight: 500;
   }
+
+  .lead {
+    font-size: 1.12rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+  }
+
   .hero-image {
-    flex-shrink: 0;
-    width: 250px;
-    height: 250px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid var(--bg-secondary);
     box-shadow: var(--shadow-lg);
+    justify-self: end;
   }
+
   .hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+
   .social-links {
     display: flex;
     gap: var(--spacing-md);
     margin-top: var(--spacing-lg);
     flex-wrap: wrap;
   }
+
   .social-links a {
     font-family: var(--font-sans);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--radius-md);
     background-color: var(--bg-tertiary);
     color: var(--text-primary);
     text-decoration: none !important;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
   }
+
   .social-links a:hover {
     background-color: var(--accent-light);
     color: var(--accent-color);
+    transform: translateY(-1px);
   }
+
+  .section-intro {
+    max-width: 760px;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-secondary);
+  }
+
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .research-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--radius-lg, 16px);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .research-card h3 {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.08rem;
+    line-height: 1.4;
+  }
+
+  .research-card p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
   .tag-list {
     display: flex;
     gap: var(--spacing-md);
     list-style: none;
     padding: 0;
     flex-wrap: wrap;
+    margin: 0;
   }
+
   .tag-list li {
     background-color: var(--bg-tertiary);
     padding: var(--spacing-sm) var(--spacing-md);
-    border-radius: 20px;
+    border-radius: 999px;
     font-size: 0.95rem;
     color: var(--text-secondary);
     font-weight: 500;
   }
-  .awards-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-  }
-  .awards-list li {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.5rem;
-    padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid var(--bg-tertiary);
-  }
-  .award-name {
-    font-weight: 600;
-    color: var(--text-primary);
-  }
-  .award-name a {
-    color: var(--accent-color);
-    text-decoration: underline;
-    text-decoration-color: var(--accent-light);
-    text-underline-offset: 3px;
-  }
-  .award-detail {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    font-style: italic;
-  }
-  .award-year {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-weight: 500;
-    margin-left: auto;
-  }
-  @media (max-width: 768px) {
+
+  @media (max-width: 900px) {
     .hero {
-      flex-direction: column-reverse;
-      text-align: center;
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
     }
+
+    .hero-image {
+      justify-self: start;
+      width: 200px;
+      height: 200px;
+    }
+
+    .research-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.2rem;
+    }
+
+    .subtitle {
+      font-size: 1.08rem;
+    }
+
+    .lead {
+      font-size: 1.04rem;
+    }
+
     .social-links,
     .tag-list {
-      justify-content: center;
-    }
-    .award-year {
-      margin-left: 0;
+      justify-content: flex-start;
     }
   }
 </style>
