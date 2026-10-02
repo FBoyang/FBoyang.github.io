@@ -1,7 +1,6 @@
 ---
-// A short, tilted ribbon helix inside a faint cloud of nucleotide letters.
-// Only the helix moves (slowly); it stops for prefers-reduced-motion and
-// pauses when off screen.
+// A short, tilted, static ribbon helix inside a faint cloud of nucleotide
+// letters. Drawn once, and redrawn only on resize.
 interface Props {
   width?: number;
   height?: number;
@@ -25,7 +24,7 @@ const { width = 260, height = 320, tilt = 28 } = Astro.props;
     width: var(--helix-width);
     max-width: 100%;
     height: var(--helix-height);
-    color: var(--accent-color);
+    color: var(--text-primary);
     pointer-events: none;
   }
   canvas {
@@ -37,7 +36,7 @@ const { width = 260, height = 320, tilt = 28 } = Astro.props;
 
 <script>
   const WAVELENGTH = 140; // px per helical turn
-  const SECONDS_PER_TURN = 30;
+  const PHASE = 0.6; // rotation of the helix about its axis, in radians
   const BP_PER_TURN = 10;
   const STEP = 2; // px between sampled points along a strand
   const FADE = 0.2; // fraction of the length faded at each end
@@ -47,6 +46,9 @@ const { width = 260, height = 320, tilt = 28 } = Astro.props;
     const x = Math.min(Math.max(t, 0), 1);
     return x * x * (3 - 2 * x);
   };
+
+  const parseRgb = (css: string) =>
+    (css.match(/[\d.]+/g) ?? ["0", "0", "0"]).slice(0, 3).map(Number);
 
   // Deterministic PRNG so the letter cloud is identical on every load.
   const mulberry32 = (seed: number) => () => {
@@ -67,20 +69,13 @@ const { width = 260, height = 320, tilt = 28 } = Astro.props;
     radius = 0;
     axis = { x: 0, y: -1 };
     perp = { x: 1, y: 0 };
-    phase = 0;
-    last = 0;
-    raf = 0;
-    visible = false;
-    reduceMotion = false;
+    ink = [0, 0, 0];
+    paper = [255, 255, 255];
     resizeObserver?: ResizeObserver;
-    intersectionObserver?: IntersectionObserver;
 
     connectedCallback() {
       this.canvas = this.querySelector("canvas")!;
       this.ctx = this.canvas.getContext("2d")!;
-      this.reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
 
       const tilt = ((Number(this.dataset.tilt) || 0) * Math.PI) / 180;
       this.axis = { x: Math.sin(tilt), y: -Math.cos(tilt) };
@@ -91,18 +86,10 @@ const { width = 260, height = 320, tilt = 28 } = Astro.props;
         this.draw();
       });
       this.resizeObserver.observe(this);
-
-      this.intersectionObserver = new IntersectionObserver(([entry]) => {
-        this.visible = entry.isIntersecting;
-        if (this.visible) this.start();
-      });
-      this.intersectionObserver.observe(this);
     }
 
     disconnectedCallback() {
       this.resizeObserver?.disconnect();
-      this.intersectionObserver?.disconnect();
-      cancelAnimationFrame(this.raf);
     }
 
     resize() {
@@ -122,21 +109,14 @@ const { width = 260, height = 320, tilt = 28 } = Astro.props;
       this.drawCloud();
     }
 
-    start() {
-      if (this.reduceMotion || this.raf) return;
-      this.last = performance.now();
-      this.raf = requestAnimationFrame(this.tick);
+    // Solid colour equivalent to ink at the given opacity over the page
+    // background. Overlapping strokes then don't darken into visible beads.
+    shade(opacity: number) {
+      const [r, g, b] = this.ink.map(
+        (c, i) => this.paper[i] + (c - this.paper[i]) * opacity
+      );
+      return `rgb(${r}, ${g}, ${b})`;
     }
-
-    tick = (now: number) => {
-      this.raf = 0;
-      if (!this.visible) return;
-      const dt = Math.min((now - this.last) / 1000, 0.1);
-      this.last = now;
-      this.phase += (dt * 2 * Math.PI) / SECONDS_PER_TURN;
-      this.draw();
-      this.raf = requestAnimationFrame(this.tick);
-    };
 
     // Map helix-local coordinates (u along the axis, v across it) to screen.
     toScreen(u: number, v: number) {
@@ -176,7 +156,7 @@ const { width = 260, height = 320, tilt = 28 } = Astro.props;
     }
 
     angle(u: number) {
-      return (2 * Math.PI * u) / WAVELENGTH + this.phase;
+      return (2 * Math.PI * u) / WAVELENGTH + PHASE;
     }
 
     drawStrand(offset: number, front: boolean) {
@@ -189,7 +169,7 @@ const { width = 260, height = 320, tilt = 28 } = Astro.props;
 
         const fade = this.endFade(u);
         if (fade <= 0) continue;
-        ctx.globalAlpha = (0.18 + 0.82 * depth) * fade;
+        ctx.strokeStyle = this.shade((0.18 + 0.82 * depth) * fade);
         ctx.lineWidth = 1.5 + 3.5 * depth;
         const p0 = this.toScreen(u, radius * Math.sin(a0));
         const p1 = this.toScreen(u + STEP, radius * Math.sin(a1));
@@ -219,7 +199,7 @@ const { width = 260, height = 320, tilt = 28 } = Astro.props;
           [v, inner, depth],
           [-v, -inner, 1 - depth],
         ]) {
-          ctx.globalAlpha = (0.12 + 0.3 * d) * fade;
+          ctx.strokeStyle = this.shade((0.12 + 0.3 * d) * fade);
           const p0 = this.toScreen(u, from);
           const p1 = this.toScreen(u, to);
           ctx.beginPath();
@@ -238,7 +218,8 @@ const { width = 260, height = 320, tilt = 28 } = Astro.props;
       ctx.globalAlpha = 1;
       ctx.drawImage(this.cloud, 0, 0, width, height);
 
-      ctx.strokeStyle = getComputedStyle(this).color;
+      this.ink = parseRgb(getComputedStyle(this).color);
+      this.paper = parseRgb(getComputedStyle(document.body).backgroundColor);
       ctx.lineCap = "round";
       // Back halves, then base pairs, then front halves.
       this.drawStrand(0, false);
@@ -246,7 +227,6 @@ const { width = 260, height = 320, tilt = 28 } = Astro.props;
       this.drawBasePairs();
       this.drawStrand(0, true);
       this.drawStrand(Math.PI, true);
-      ctx.globalAlpha = 1;
     }
   }
 
