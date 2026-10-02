@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import DNAHelix from "../components/DNAHelix.astro";
 
 const researchAreas = [
   {
@@ -75,8 +76,11 @@ const focusTags = [
         </div>
       </div>
 
-      <div class="hero-image">
-        <img src="/images/boyang.jpeg" alt="Boyang Fu" />
+      <div class="hero-aside">
+        <div class="hero-image">
+          <img src="/images/boyang.jpeg" alt="Boyang Fu" />
+        </div>
+        <DNAHelix />
       </div>
     </section>
 
@@ -147,6 +151,14 @@ const focusTags = [
     line-height: 1.8;
     color: var(--text-primary);
     margin-bottom: var(--spacing-lg);
+  }
+
+  .hero-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    justify-self: end;
   }
 
   .hero-image {
@@ -245,6 +257,14 @@ const focusTags = [
     .hero {
       grid-template-columns: 1fr;
       gap: var(--spacing-lg);
+    }
+
+    .hero-aside {
+      justify-self: start;
+    }
+
+    .hero-aside :global(dna-helix) {
+      display: none;
     }
 
     .hero-image {

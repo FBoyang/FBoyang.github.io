@@ -1,203 +1,256 @@
 ---
-// Custom Astro component for a highly performant, dynamic, rotating DNA double helix.
+// A short, tilted ribbon helix inside a faint cloud of nucleotide letters.
+// Only the helix moves (slowly); it stops for prefers-reduced-motion and
+// pauses when off screen.
+interface Props {
+  width?: number;
+  height?: number;
+  tilt?: number; // degrees from vertical; positive leans the top to the right
+}
+
+const { width = 260, height = 320, tilt = 28 } = Astro.props;
 ---
 
-<dna-helix>
+<dna-helix
+  style={`--helix-width: ${width}px; --helix-height: ${height}px`}
+  data-tilt={tilt}
+  aria-hidden="true"
+>
   <canvas></canvas>
 </dna-helix>
 
 <style>
   dna-helix {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    min-height: 400px;
-    overflow: hidden;
-    background: transparent;
+    display: block;
+    width: var(--helix-width);
+    max-width: 100%;
+    height: var(--helix-height);
+    color: var(--accent-color);
+    pointer-events: none;
   }
   canvas {
     display: block;
     width: 100%;
     height: 100%;
-    max-width: 600px; /* Limit width for aesthetic framing */
   }
 </style>
 
 <script>
-  class DNAHelixComponent extends HTMLElement {
-    constructor() {
-      super();
-      this.canvas = this.querySelector('canvas');
-      this.ctx = this.canvas.getContext('2d', { alpha: true });
-      this.particles = [];
-      this.sortList = [];
-      this.animationId = null;
-      this.time = 0;
+  const WAVELENGTH = 140; // px per helical turn
+  const SECONDS_PER_TURN = 30;
+  const BP_PER_TURN = 10;
+  const STEP = 2; // px between sampled points along a strand
+  const FADE = 0.2; // fraction of the length faded at each end
+  const NUCLEOTIDES = "ACGT";
 
-      this.resize = this.resize.bind(this);
-      this.animate = this.animate.bind(this);
-    }
+  const smoothstep = (t: number) => {
+    const x = Math.min(Math.max(t, 0), 1);
+    return x * x * (3 - 2 * x);
+  };
+
+  // Deterministic PRNG so the letter cloud is identical on every load.
+  const mulberry32 = (seed: number) => () => {
+    seed = (seed + 0x6d2b79f5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+
+  class DNAHelix extends HTMLElement {
+    canvas!: HTMLCanvasElement;
+    ctx!: CanvasRenderingContext2D;
+    cloud = document.createElement("canvas");
+    width = 0;
+    height = 0;
+    dpr = 1;
+    length = 0;
+    radius = 0;
+    axis = { x: 0, y: -1 };
+    perp = { x: 1, y: 0 };
+    phase = 0;
+    last = 0;
+    raf = 0;
+    visible = false;
+    reduceMotion = false;
+    resizeObserver?: ResizeObserver;
+    intersectionObserver?: IntersectionObserver;
 
     connectedCallback() {
-      window.addEventListener('resize', this.resize);
-      // Wait a tick for CSS to apply and give the canvas actual dimensions
-      setTimeout(() => {
+      this.canvas = this.querySelector("canvas")!;
+      this.ctx = this.canvas.getContext("2d")!;
+      this.reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      const tilt = ((Number(this.dataset.tilt) || 0) * Math.PI) / 180;
+      this.axis = { x: Math.sin(tilt), y: -Math.cos(tilt) };
+      this.perp = { x: Math.cos(tilt), y: Math.sin(tilt) };
+
+      this.resizeObserver = new ResizeObserver(() => {
         this.resize();
-        this.initParticles();
-        this.animate();
-      }, 0);
+        this.draw();
+      });
+      this.resizeObserver.observe(this);
+
+      this.intersectionObserver = new IntersectionObserver(([entry]) => {
+        this.visible = entry.isIntersecting;
+        if (this.visible) this.start();
+      });
+      this.intersectionObserver.observe(this);
     }
 
     disconnectedCallback() {
-      window.removeEventListener('resize', this.resize);
-      if (this.animationId) {
-        cancelAnimationFrame(this.animationId);
-      }
+      this.resizeObserver?.disconnect();
+      this.intersectionObserver?.disconnect();
+      cancelAnimationFrame(this.raf);
     }
 
     resize() {
-      const dpr = window.devicePixelRatio || 1;
-      const rect = this.canvas.getBoundingClientRect();
-
-      this.canvas.width = rect.width * dpr;
-      this.canvas.height = rect.height * dpr;
-
-      this.ctx.scale(dpr, dpr);
+      this.dpr = window.devicePixelRatio || 1;
+      const rect = this.getBoundingClientRect();
       this.width = rect.width;
       this.height = rect.height;
+      for (const c of [this.canvas, this.cloud]) {
+        c.width = Math.round(rect.width * this.dpr);
+        c.height = Math.round(rect.height * this.dpr);
+      }
+      this.ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+
+      const tiltCos = Math.abs(this.axis.y);
+      this.length = (this.height / tiltCos) * 0.95;
+      this.radius = Math.min(this.width * 0.15, 38);
+      this.drawCloud();
     }
 
-    initParticles() {
-      // Pre-allocate particles to avoid garbage collection during animation
-      this.particles = [];
-
-      const numPoints = 600; // Density of the continuous backbones
-      const twist = 3 * Math.PI; // Total twist from top to bottom - elongated pitch
-
-      // 1. Two Distinct Backbones
-      for (let i = 0; i < numPoints; i++) {
-        const normalizedY = (i / (numPoints - 1)) - 0.5; // -0.5 to 0.5
-        const phaseOffset = normalizedY * twist;
-
-        // Strand 1
-        this.particles.push({
-          type: 'strand',
-          yPhase: phaseOffset,
-          xPhase: 0,
-          normalizedY,
-          x: 0, y: 0, z: 0
-        });
-
-        // Strand 2
-        this.particles.push({
-          type: 'strand',
-          yPhase: phaseOffset,
-          xPhase: Math.PI,
-          normalizedY,
-          x: 0, y: 0, z: 0
-        });
-      }
-
-      // 2. The Base Pairs (Rungs) at regular, sparse intervals
-      const numRungs = 20;
-      const pointsPerRung = 22; // Blocks per connection
-
-      for (let i = 0; i < numRungs; i++) {
-        // Offset slightly to keep them within bounds and avoid extreme top/bottom
-        const normalizedY = ((i + 0.5) / numRungs) - 0.5;
-        const phaseOffset = normalizedY * twist;
-
-        for (let j = 1; j < pointsPerRung - 1; j++) {
-           const t = j / (pointsPerRung - 1); // 0.0 to 1.0
-           this.particles.push({
-             type: 'rung',
-             yPhase: phaseOffset,
-             t,
-             normalizedY,
-             x: 0, y: 0, z: 0
-           });
-        }
-      }
-
-      // Pointer array for Z-sorting without mutating original particle array
-      this.sortList = [...this.particles];
+    start() {
+      if (this.reduceMotion || this.raf) return;
+      this.last = performance.now();
+      this.raf = requestAnimationFrame(this.tick);
     }
 
-    animate() {
-      this.ctx.clearRect(0, 0, this.width, this.height);
+    tick = (now: number) => {
+      this.raf = 0;
+      if (!this.visible) return;
+      const dt = Math.min((now - this.last) / 1000, 0.1);
+      this.last = now;
+      this.phase += (dt * 2 * Math.PI) / SECONDS_PER_TURN;
+      this.draw();
+      this.raf = requestAnimationFrame(this.tick);
+    };
 
-      this.time += 0.015; // Rotation speed
+    // Map helix-local coordinates (u along the axis, v across it) to screen.
+    toScreen(u: number, v: number) {
+      return {
+        x: this.width / 2 + u * this.axis.x + v * this.perp.x,
+        y: this.height / 2 + u * this.axis.y + v * this.perp.y,
+      };
+    }
 
-      const centerY = this.height / 2;
-      const centerX = this.width / 2;
+    endFade(u: number) {
+      const t = u / this.length + 0.5;
+      return smoothstep(t / FADE) * smoothstep((1 - t) / FADE);
+    }
 
-      // Responsive sizing based on canvas dimensions
-      const radius = Math.min(this.width, this.height) * 0.3;
-      const heightScale = this.height * 0.7;
+    // Static backdrop of sequence letters, densest along the helix axis.
+    drawCloud() {
+      const ctx = this.cloud.getContext("2d")!;
+      ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+      ctx.clearRect(0, 0, this.width, this.height);
+      ctx.fillStyle = getComputedStyle(this).color;
+      ctx.font = "500 9px ui-monospace, SFMono-Regular, Menlo, monospace";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
 
-      // Update particle positions
-      for (let i = 0; i < this.particles.length; i++) {
-        const p = this.particles[i];
-
-        // Organic motion: sine wave for a fluid, floating, 'breathing' effect
-        const breathingOffset = Math.sin(this.time * 2 + p.normalizedY * Math.PI * 3) * 15;
-        p.y = centerY + (p.normalizedY * heightScale) + breathingOffset;
-
-        const angle = this.time * 1.5 + p.yPhase;
-
-        if (p.type === 'strand') {
-          const strandAngle = angle + p.xPhase;
-          p.x = centerX + Math.cos(strandAngle) * radius;
-          p.z = Math.sin(strandAngle);
-        } else {
-          // Interpolate position between the two strands for rungs
-          const angle1 = angle;
-          const angle2 = angle + Math.PI;
-
-          const x1 = Math.cos(angle1) * radius;
-          const z1 = Math.sin(angle1);
-          const x2 = Math.cos(angle2) * radius;
-          const z2 = Math.sin(angle2);
-
-          p.x = centerX + x1 + (x2 - x1) * p.t;
-          p.z = z1 + (z2 - z1) * p.t;
+      const rand = mulberry32(17);
+      const band = this.radius * 2.4;
+      for (let v = -band; v <= band; v += 11) {
+        for (let u = -this.length / 2; u <= this.length / 2; u += 8) {
+          if (rand() > 0.5) continue;
+          const letter = NUCLEOTIDES[Math.floor(rand() * 4)];
+          const falloff = Math.pow(1 - Math.abs(v) / band, 1.4);
+          ctx.globalAlpha = 0.2 * falloff * this.endFade(u);
+          const p = this.toScreen(u, v);
+          ctx.fillText(letter, p.x, p.y);
         }
       }
+    }
 
-      // Z-sorting: Painter's algorithm to render from back to front
-      this.sortList.sort((a, b) => a.z - b.z);
+    angle(u: number) {
+      return (2 * Math.PI * u) / WAVELENGTH + this.phase;
+    }
 
-      // Render particles
-      for (let i = 0; i < this.sortList.length; i++) {
-        const p = this.sortList[i];
+    drawStrand(offset: number, front: boolean) {
+      const { ctx, radius } = this;
+      for (let u = -this.length / 2; u < this.length / 2; u += STEP) {
+        const a0 = this.angle(u) + offset;
+        const a1 = this.angle(u + STEP) + offset;
+        const depth = (Math.cos((a0 + a1) / 2) + 1) / 2; // 1 = nearest
+        if (depth >= 0.5 !== front) continue;
 
-        // Normalize Z from [-1, 1] to [0, 1] where 1 is at the front
-        const normalizedZ = (p.z + 1) / 2;
-
-        // Scale pixel sizes slightly based on depth
-        const baseSize = p.type === 'strand' ? 3.5 : 2;
-        const size = baseSize + (normalizedZ * 2.5);
-
-        // Atmospheric Depth of Field:
-        // Front (1.0) -> Dark charcoal grey: rgb(40,40,40), fully opaque
-        // Back (0.0) -> Light silver: rgb(200,200,200), semi-transparent
-        const colorVal = Math.floor(200 - (160 * normalizedZ));
-        const alpha = 0.15 + (0.85 * normalizedZ);
-
-        this.ctx.fillStyle = `rgba(${colorVal}, ${colorVal}, ${colorVal}, ${alpha})`;
-
-        // Render as a square 'pixel' block
-        this.ctx.fillRect(p.x - size / 2, p.y - size / 2, size, size);
+        const fade = this.endFade(u);
+        if (fade <= 0) continue;
+        ctx.globalAlpha = (0.18 + 0.82 * depth) * fade;
+        ctx.lineWidth = 1.5 + 3.5 * depth;
+        const p0 = this.toScreen(u, radius * Math.sin(a0));
+        const p1 = this.toScreen(u + STEP, radius * Math.sin(a1));
+        ctx.beginPath();
+        ctx.moveTo(p0.x, p0.y);
+        ctx.lineTo(p1.x, p1.y);
+        ctx.stroke();
       }
+    }
 
-      this.animationId = requestAnimationFrame(this.animate);
+    // Each base pair is two half-rungs with a small gap, like paired bases.
+    drawBasePairs() {
+      const { ctx, radius } = this;
+      const spacing = WAVELENGTH / BP_PER_TURN;
+      const gap = 2;
+      ctx.lineWidth = 2;
+
+      for (let u = -this.length / 2 + spacing / 2; u < this.length / 2; u += spacing) {
+        const a = this.angle(u);
+        const v = radius * Math.sin(a);
+        if (Math.abs(v) < gap + 1) continue;
+        const fade = this.endFade(u);
+        const depth = (Math.cos(a) + 1) / 2;
+        const inner = Math.sign(v) * gap;
+
+        for (const [from, to, d] of [
+          [v, inner, depth],
+          [-v, -inner, 1 - depth],
+        ]) {
+          ctx.globalAlpha = (0.12 + 0.3 * d) * fade;
+          const p0 = this.toScreen(u, from);
+          const p1 = this.toScreen(u, to);
+          ctx.beginPath();
+          ctx.moveTo(p0.x, p0.y);
+          ctx.lineTo(p1.x, p1.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    draw() {
+      const { ctx, width, height } = this;
+      if (!width || !height) return;
+
+      ctx.clearRect(0, 0, width, height);
+      ctx.globalAlpha = 1;
+      ctx.drawImage(this.cloud, 0, 0, width, height);
+
+      ctx.strokeStyle = getComputedStyle(this).color;
+      ctx.lineCap = "round";
+      // Back halves, then base pairs, then front halves.
+      this.drawStrand(0, false);
+      this.drawStrand(Math.PI, false);
+      this.drawBasePairs();
+      this.drawStrand(0, true);
+      this.drawStrand(Math.PI, true);
+      ctx.globalAlpha = 1;
     }
   }
 
-  // Register the custom element exactly once
-  if (!customElements.get('dna-helix')) {
-    customElements.define('dna-helix', DNAHelixComponent);
+  if (!customElements.get("dna-helix")) {
+    customElements.define("dna-helix", DNAHelix);
   }
 </script>
